@@ -1,0 +1,18 @@
+﻿.newbackground {
+    background-image: url('images/index-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.vertical-center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
