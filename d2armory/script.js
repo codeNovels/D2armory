@@ -17,7 +17,7 @@ function MainController($scope, $http) {
 
     var onRepos = function (reponse) {
         $scope.repos = response.data;
-    }
+    };
 
     var onError = function () {
         $scope.error = "No results found."
@@ -27,6 +27,5 @@ function MainController($scope, $http) {
         $http.get("http://us.battle.net/api/d3/profile/" + battleTag + "/")
             .then(onUserComplete, onError);
     };
-
 
 }
