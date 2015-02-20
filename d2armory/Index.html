@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="d2armory">
 <head>
     <!-- SCROLLS -->
     <!-- load bootstrap and fontawesome via CDN -->
@@ -15,18 +15,25 @@
     <title>d2armory</title>
 </head>
 
-<body class="newbackground">
+<body class="newbackground" ng-controller="MainController">
 
-    <form class="container-fluid">
+    <form class="container-fluid" ng-submit="search(battleTag)">
         <div class="row-fluid ">
             <div class="col-xs-2 col-xs-offset-10 centering">
-                <input class="form-control" type="text" placeholder="BattleTag#                example: 'Billy-1739'" ng-model="battleTag" />
-            </div>        
+                <input class="form-control" type="text" placeholder="BattleTag#             example: 'Billy-1739'" ng-model="battleTag" />
+                <input type="submit" value="search" />
+
+                <div>
+                    <a>{{account.heroes[0].name}} {{account.heroes[0].class}} {{account.heroes[0].level}}</a>
+                </div>
+
+            </div>
         </div>
     </form>
+    
 
 
-    <audio controls autoplay>
+    <audio controls autoplay style="visibility: hidden;">
         <source src="sound/bg-music.mp3" type="audio/mpeg" />
     </audio>
 
