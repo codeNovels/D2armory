@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="character.html" />
+    <Content Include="images\diablo_3_reaper_of_souls-wide.jpg" />
     <Content Include="images\index-background.jpg" />
     <Content Include="Index.html" />
     <Content Include="script.js" />
