@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="">
 <head>
     <!-- SCROLLS -->
     <!-- load bootstrap and fontawesome via CDN -->
@@ -17,16 +17,19 @@
 
 <body class="newbackground">
 
-    <form class="container-fluid form-inline">
+    <form class="container-fluid">
         <div class="row-fluid ">
-            <div class="col-lg-1 col-lg-offset-5  form-group">
-                <input class="form-control" type="text" placeholder="BattleTagID" />
-            </div>
-            <div class="col-lg-1  form-group">
-                <input class="form-control" type="text" placeholder="Tag#" />
-            </div>
+            <div class="col-lg-2 col-lg-offset-10 centering">
+                <input class="form-control" type="text" placeholder="BattleTag#" ng-model="battleTag" />
+            </div>        
         </div>
     </form>
+
+
+    <audio controls autoplay>
+        <source src="sound/bg-music.mp3" type="audio/mpeg" />
+    </audio>
+
 
 </body>
 </html>
