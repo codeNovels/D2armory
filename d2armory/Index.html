@@ -29,11 +29,15 @@
                     </span>
                 </div>
                 <div ng-repeat="hero in account.heroes">
-                    <a><div>{{hero.name}} {{hero.class}} {{hero.level}}</div></a>
+                    <a>
+                        <div onmouseover="this.style.backgroundColor = 'LightBlue'" onmouseout="    this.style.backgroundColor = 'black'" style="background-color:black">
+                            {{hero.name}} {{hero.class}} {{hero.level}}
+                        </div>
+                    </a>
                 </div>
 
 
-            </div>
+</div>
         </div>
     </form>
     
