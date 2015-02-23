@@ -76,20 +76,27 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="character.html" />
     <Content Include="images\diablo_3_reaper_of_souls-wide.jpg" />
     <Content Include="images\index-background.jpg" />
+    <Content Include="images\inventory-lines.png" />
+    <Content Include="images\skill-overlays.png" />
     <Content Include="Index.html" />
-    <Content Include="script.js" />
+    <Content Include="controllers\accountController.js" />
     <Content Include="sound\bg-music.mp3" />
-    <Content Include="style.css" />
+    <Content Include="stylesheets\common-game-site.min.css" />
+    <Content Include="stylesheets\d3.css" />
+    <Content Include="stylesheets\hero-slots.css" />
+    <Content Include="stylesheets\hero.css" />
+    <Content Include="stylesheets\ratings.css" />
+    <Content Include="stylesheets\shared.css" />
+    <Content Include="stylesheets\style.css" />
+    <Content Include="stylesheets\tooltips.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
