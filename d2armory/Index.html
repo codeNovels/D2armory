@@ -25,7 +25,7 @@
 </head>
 
 <body ng-controller="accountController" class="profile-sheet">
-    <div xmlns="http://www.w3.org/1999/xhtml" class="profile-sheet" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/paperdoll/barbarian-male.jpg')">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="profile-sheet" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/paperdoll/{{heroDetails.class}}-{{heroDetails.gender | gender}}.jpg')">
 
         <!--Calling the Blizzard API-->
         <form class="container-fluid" ng-submit="search(battleTag)">
@@ -290,9 +290,9 @@
             <ul class="gear-labels" id="gear-labels">
 
                 <li class="gear-label slot-head">
-                    <a href="" data-d3tooltip="item/Cl8ImqPk0QQSBwgEFYdTxZEd3Ubxtx2H9XtuHXYe9g0d1maKlB3SXcJLHYYCY-owCTj0AUAAUBJgvgJqJAoMCAAQ9aS5h4OAgOAQEhQIABIHCAQVE5_YqzAJOABAAZABABjxsdXjDVACWACgAfGx1eMNoAHokMvhA6ABosHHvg0" class="label-link d3-color-green">
+                    <a href="" data-d3tooltip="item/Cl8ImqPk0QQSBwgEFYdTxZEd3Ubxtx2H9XtuHXYe9g0d1maKlB3SXcJLHYYCY-owCTj0AUAAUBJgvgJqJAoMCAAQ9aS5h4OAgOAQEhQIABIHCAQVE5_YqzAJOABAAZABABjxsdXjDVACWACgAfGx1eMNoAHokMvhA6ABosHHvg0" class="label-link d3-color-{{heroDetails.items.head.displayColor}}">
                         <span class="item-name">{{heroDetails.items.head.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{itemDetails.attributes.primary[0].text | split:'first'}}</span> {{itemDetails.attributes.primary[0].text | split:'second'}}</p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{headDetails.attributes.primary[0].text | split:'first'}}</span> {{headDetails.attributes.primary[0].text | split:'second'}}</p></span>
                         <span class="bonus-value bonus-51 long-bonus" style="display:none"><p><span class="value">+38</span> Dexterity</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+46</span> Vitality</p></span>
                         <span class="bonus-value bonus-59 long-bonus" style="display:none"><p><span class="value">+29</span><span class="value">%</span> Life</p></span>
@@ -302,9 +302,9 @@
                 </li>
 
                 <li class="gear-label slot-torso">
-                    <a href="" data-d3tooltip="item/CrcBCJuSudcDEgcIBBU0ZBkeHbnx7Bod3iVSyx0o_n0BHZMCY-odiL6-IR1bToDJMAk4sQJAAFASYIsDaigKDAgAEKjpy-iEgICACRIYCP7ihc0DEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEL7py-iEgICACRIYCLH__PgGEgcIBBUTn9irMAk4AEABkAEAaigKDAgAENKnmKaEgIDAEhIYCL6s1q4HEgcIBBUTn9irMAk4AEABkAEAGOiQy-EDUAJYAKAB8bHV4w2gAeiQy-EDoAGiwce-DQ" class="label-link d3-color-green">
+                    <a href="" data-d3tooltip="item/CrcBCJuSudcDEgcIBBU0ZBkeHbnx7Bod3iVSyx0o_n0BHZMCY-odiL6-IR1bToDJMAk4sQJAAFASYIsDaigKDAgAEKjpy-iEgICACRIYCP7ihc0DEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEL7py-iEgICACRIYCLH__PgGEgcIBBUTn9irMAk4AEABkAEAaigKDAgAENKnmKaEgIDAEhIYCL6s1q4HEgcIBBUTn9irMAk4AEABkAEAGOiQy-EDUAJYAKAB8bHV4w2gAeiQy-EDoAGiwce-DQ" class="label-link d3-color-{{heroDetails.items.torso.displayColor}}">
                         <span class="item-name">{{heroDetails.items.torso.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+163</span> Strength</p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{torsoDetails.attributes.primary[0].text | split:'first'}}</span> {{torsoDetails.attributes.primary[0].text | split:'second'}}</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+392</span> Vitality</p></span>
                         <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">72</span> Resistance to All Elements</p></span>
                         <span class="bonus-value bonus-60 long-bonus" style="display:none"><p><span class="value">+262</span> Armor</p></span>
@@ -312,9 +312,9 @@
                 </li>
 
                 <li class="gear-label slot-feet">
-                    <a href="" data-d3tooltip="item/CmMI3a-qmAMSBwgEFehulOgdvpUo_B2tx-VxHTZpS5MdW06AyR2H9XtuHdJdwkswCTi_AkAAUBJgnQNqKAoMCAAQtqnFl4GAgMAHEhgI64OiyQwSBwgEFWb1i18wCTgAQAGQAQAYr8Tc9gJQAlgA" class="label-link d3-color-orange">
+                    <a href="" data-d3tooltip="item/CmMI3a-qmAMSBwgEFehulOgdvpUo_B2tx-VxHTZpS5MdW06AyR2H9XtuHdJdwkswCTi_AkAAUBJgnQNqKAoMCAAQtqnFl4GAgMAHEhgI64OiyQwSBwgEFWb1i18wCTgAQAGQAQAYr8Tc9gJQAlgA" class="label-link d3-color-{{heroDetails.items.feet.displayColor}}">
                         <span class="item-name">{{heroDetails.items.feet.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+337</span> Strength</p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{feetDetails.attributes.primary[0].text | split:'first'}}</span> {{feetDetails.attributes.primary[0].text | split:'second'}}</p></span>
                         <span class="bonus-value bonus-52 long-bonus" style="display:none"><p><span class="value">+90</span> Intelligence</p></span>
                         <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">72</span> Resistance to All Elements</p></span>
                         <span class="bonus-value bonus-59 long-bonus" style="display:none"><p><span class="value">+12</span><span class="value">%</span> Life</p></span>
@@ -325,9 +325,9 @@
                 </li>
 
                 <li class="gear-label slot-hands">
-                    <a href="" data-d3tooltip="item/CjkI8ZKmkwISBwgEFVHw6GsduNItxh0PXPT8HdZmipQdDmt__R3SXcJLHcJqmxEwCTj9AUAAUBJgyQIYosHHvg1QAlgAoAHxsdXjDaAB6JDL4QOgAaLBx74N" class="label-link d3-color-green">
+                    <a href="" data-d3tooltip="item/CjkI8ZKmkwISBwgEFVHw6GsduNItxh0PXPT8HdZmipQdDmt__R3SXcJLHcJqmxEwCTj9AUAAUBJgyQIYosHHvg1QAlgAoAHxsdXjDaAB6JDL4QOgAaLBx74N" class="label-link d3-color-{{heroDetails.items.hands.displayColor}}">
                         <span class="item-name">{{heroDetails.items.hands.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+193</span> Strength</p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{handsDetails.attributes.primary[0].text | split:'first'}}</span> {{handsDetails.attributes.primary[0].text | split:'second'}}</p></span>
                         <span class="bonus-value bonus-52 long-bonus" style="display:none"><p><span class="value">+113</span> Intelligence</p></span>
                         <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">33.0</span><span class="value">%</span> </p></span>
                         <span class="bonus-value bonus-66 long-bonus" style="display:none"><p>Regenerates <span class="value">279</span> Life per Second</p></span>
@@ -337,9 +337,9 @@
                 </li>
 
                 <li class="gear-label slot-shoulders">
-                    <a href="/d3/en/item/archon-spaulders" data-d3tooltip="item/CkgIm86syAwSBwgEFdD4yBUdIuzMuB2gbLMUHeBElDUdslfV7h3eJVLLHcJqmxEiCwgBFYpCAwAYKCAkMAk41wNAAEgBUBBg2wQYoOPH3AJQAlgA" class="label-link d3-color-yellow">
+                    <a href="/d3/en/item/archon-spaulders" data-d3tooltip="item/CkgIm86syAwSBwgEFdD4yBUdIuzMuB2gbLMUHeBElDUdslfV7h3eJVLLHcJqmxEiCwgBFYpCAwAYKCAkMAk41wNAAEgBUBBg2wQYoOPH3AJQAlgA" class="label-link d3-color-{{heroDetails.items.shoulders.displayColor}}">
                         <span class="item-name">{{heroDetails.items.shoulders.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+259</span> Strength</p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{shouldersDetails.attributes.primary[0].text | split:'first'}}</span> {{shouldersDetails.attributes.primary[0].text | split:'second'}}</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+133</span> Vitality</p></span>
                         <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">68</span> Resistance to All Elements</p></span>
                         <span class="bonus-value bonus-66 long-bonus" style="display:none"><p>Regenerates <span class="value">240</span> Life per Second</p></span>
@@ -348,9 +348,9 @@
                 </li>
 
                 <li class="gear-label slot-legs">
-                    <a href="" data-d3tooltip="item/Co0BCNqwjtgIEgcIBBVnIxsNHYi-viEdCupQCB2Xi8MRHXWx7PAd0HHzPB2vU8M2MAk4ugJAAFASYJYDaigKDAgAEIjcwZmBgIDAHxIYCJ-ClbsDEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEOvrpKqHgIDgGRIYCITExfoFEgcIBBUTn9irMAk4AEABkAEAGM6N2dEBUAJYAKABzo3Z0QE" class="label-link d3-color-green">
+                    <a href="" data-d3tooltip="item/Co0BCNqwjtgIEgcIBBVnIxsNHYi-viEdCupQCB2Xi8MRHXWx7PAd0HHzPB2vU8M2MAk4ugJAAFASYJYDaigKDAgAEIjcwZmBgIDAHxIYCJ-ClbsDEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEOvrpKqHgIDgGRIYCITExfoFEgcIBBUTn9irMAk4AEABkAEAGM6N2dEBUAJYAKABzo3Z0QE" class="label-link d3-color-{{heroDetails.items.legs.displayColor}}">
                         <span class="item-name">{{heroDetails.items.legs.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+91</span> Strength</p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{legsDetails.attributes.primary[0].text | split:'first'}}</span> {{legsDetails.attributes.primary[0].text | split:'second'}}</p></span>
                         <span class="bonus-value bonus-51 long-bonus" style="display:none"><p><span class="value">+98</span> Dexterity</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+116</span> Vitality</p></span>
                         <span class="bonus-value bonus-57 long-bonus" style="display:none"><p>Attack Speed Increased by <span class="value">9.0</span><span class="value">%</span></p></span>
@@ -360,9 +360,9 @@
                 </li>
 
                 <li class="gear-label slot-bracers">
-                    <a href="/d3/en/item/warbands" data-d3tooltip="item/CkYIzf3k9AsSBwgEFdYsyssddh72DR0GVAUXHdwSlCwdKRJz4B0NPj-7HV_MtigiCwgBFXZCAwAYHiAAMAk4xAJAAFAMYOEDGNPMrsMGUAJYAA" class="label-link d3-color-yellow">
+                    <a href="/d3/en/item/warbands" data-d3tooltip="item/CkYIzf3k9AsSBwgEFdYsyssddh72DR0GVAUXHdwSlCwdKRJz4B0NPj-7HV_MtigiCwgBFXZCAwAYHiAAMAk4xAJAAFAMYOEDGNPMrsMGUAJYAA" class="label-link d3-color-{{heroDetails.items.bracers.displayColor}}">
                         <span class="item-name">{{heroDetails.items.bracers.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+133</span> Strength</p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{bracersDetails.attributes.primary[0].text | split:'first'}}</span> {{bracersDetails.attributes.primary[0].text | split:'second'}}</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+130</span> Vitality</p></span>
                         <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">53</span> Resistance to All Elements</p></span>
                         <span class="bonus-value bonus-67 long-bonus" style="display:none"><p>Critical Hit Chance Increased by <span class="value">5.5</span><span class="value">%</span></p></span>
@@ -371,7 +371,7 @@
                 </li>
 
                 <li class="gear-label slot-mainHand">
-                    <a href="" data-d3tooltip="item/Cl8IpaXu4A4SBwgEFQhjE3Ad3YbwJh2GAmPqHb7m3bUd1KFb4B2RqGXGHWSRAaMwCTilAkAAUBJg_QJqJAoMCAAQlpPIhoOAgOAQEhQIABIHCAQVHpaumDAJOABAAZABABiQjJuBDlACWAA" class="label-link d3-color-orange">
+                    <a href="" data-d3tooltip="item/Cl8IpaXu4A4SBwgEFQhjE3Ad3YbwJh2GAmPqHb7m3bUd1KFb4B2RqGXGHWSRAaMwCTilAkAAUBJg_QJqJAoMCAAQlpPIhoOAgOAQEhQIABIHCAQVHpaumDAJOABAAZABABiQjJuBDlACWAA" class="label-link d3-color-{{heroDetails.items.mainHand.displayColor}}">
                         <span class="item-name">{{heroDetails.items.mainHand.name}}</span>
                         <span class="weapon-dps">
                             <span class="value">1186.7</span> DPS
@@ -388,7 +388,7 @@
                 </li>
 
                 <li class="gear-label slot-offHand">
-                    <a href="/d3/en/item/bulkathoss-warrior-blood-1OE7NH" data-d3tooltip="item/CmMIv86wlQUSBwgEFeVyNmMd7TrCNh1nWRe1Hee-mnEd2ZmE2B2gbLMUHRa8a7UwCTjbAUAAUBJgnwJqKAoMCAAQ8_e2voWAgMAoEhgIneiXjA8SBwgEFR6WrpgwDTgAQAGQAQAYysuzswxQAlgAoAHKy7OzDA" class="label-link d3-color-green">
+                    <a href="/d3/en/item/bulkathoss-warrior-blood-1OE7NH" data-d3tooltip="item/CmMIv86wlQUSBwgEFeVyNmMd7TrCNh1nWRe1Hee-mnEd2ZmE2B2gbLMUHRa8a7UwCTjbAUAAUBJgnwJqKAoMCAAQ8_e2voWAgMAoEhgIneiXjA8SBwgEFR6WrpgwDTgAQAGQAQAYysuzswxQAlgAoAHKy7OzDA" class="label-link d3-color-{{heroDetails.items.offHand.displayColor}}">
                         <span class="item-name">{{heroDetails.items.offHand.name}}</span>
                         <span class="weapon-dps">
                             <span class="value">940.0</span> DPS
@@ -402,9 +402,9 @@
                 </li>
 
                 <li class="gear-label slot-waist">
-                    <a href="" data-d3tooltip="item/CjgIyO7h7w0SBwgEFclSipsdn2yzFB0pEnPgHcxse4MddbHs8B16JH9KHQ-QCvwwCTgOQABQEmCEAhjttK3HDFACWAA" class="label-link d3-color-orange">
+                    <a href="" data-d3tooltip="item/CjgIyO7h7w0SBwgEFclSipsdn2yzFB0pEnPgHcxse4MddbHs8B16JH9KHQ-QCvwwCTgOQABQEmCEAhjttK3HDFACWAA" class="label-link d3-color-{{heroDetails.items.waist.displayColor}}">
                         <span class="item-name">{{heroDetails.items.waist.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+152</span> Strength</p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{waistDetails.attributes.primary[0].text | split:'first'}}</span> {{waistDetails.attributes.primary[0].text | split:'second'}}</p></span>
                         <span class="bonus-value bonus-52 long-bonus" style="display:none"><p><span class="value">+99</span> Intelligence</p></span>
                         <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">56</span> Resistance to All Elements</p></span>
                         <span class="bonus-value bonus-57 long-bonus" style="display:none"><p>Attack Speed Increased by <span class="value">8.0</span><span class="value">%</span></p></span>
@@ -414,10 +414,10 @@
                 </li>
 
                 <li class="gear-label slot-rightFinger">
-                    <a href="/d3/en/item/ring-1fCyBm" data-d3tooltip="item/CkAI1uPbKBIHCAQVNFVdRB12HvYNHdbxGnIdxZ6okR1DfhQbHZi6K1IiCwgBFWxCAwAYFiAMMAk4rAJAAFAOYIYDGOjU6sUIUAJYAA" class="label-link d3-color-yellow">
+                    <a href="/d3/en/item/ring-1fCyBm" data-d3tooltip="item/CkAI1uPbKBIHCAQVNFVdRB12HvYNHdbxGnIdxZ6okR1DfhQbHZi6K1IiCwgBFWxCAwAYFiAMMAk4rAJAAFAOYIYDGOjU6sUIUAJYAA" class="label-link d3-color-{{heroDetails.items.rightFinger.displayColor}}">
                         <span class="item-name">{{heroDetails.items.rightFinger.name}}</span>
-                        <span class="bonus-value bonus-7 long-bonus" style="display:none"><p><span class="value">+24</span> Maximum Damage</p></span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+158</span> Strength</p></span>
+                        <span class="bonus-value bonus-7 long-bonus" style="display:none"><p><span class="value"></span> </p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{rightFingerDetails.attributes.primary[0].text | split:'first'}}</span> {{rightFingerDetails.attributes.primary[0].text | split:'second'}}</p></span>
                         <span class="bonus-value bonus-51 long-bonus" style="display:none"><p><span class="value">+88</span> Dexterity</p></span>
                         <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">24.0</span><span class="value">%</span> </p></span>
                         <span class="bonus-value bonus-67 long-bonus" style="display:none"><p>Critical Hit Chance Increased by <span class="value">6.0</span><span class="value">%</span></p></span>
@@ -425,10 +425,10 @@
                 </li>
 
                 <li class="gear-label slot-leftFinger">
-                    <a href="" data-d3tooltip="item/CkEIu_2b1gYSBwgEFTJVXUQddh72DR2Ivr4hHSGHPlYdP0ceDB06RK6bIgsIARV1QgMAGBIgHjAJONUCQABQDmC3Axjk1OrFCFACWAA" class="label-link d3-color-yellow">
+                    <a href="" data-d3tooltip="item/CkEIu_2b1gYSBwgEFTJVXUQddh72DR2Ivr4hHSGHPlYdP0ceDB06RK6bIgsIARV1QgMAGBIgHjAJONUCQABQDmC3Axjk1OrFCFACWAA" class="label-link d3-color-{{heroDetails.items.leftFinger.displayColor}}">
                         <span class="item-name">{{heroDetails.items.leftFinger.name}}</span>
-                        <span class="bonus-value bonus-4 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">30</span>–<span class="value">66</span> Damage</p></span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+100</span> Strength</p></span>
+                        <span class="bonus-value bonus-4 long-bonus" style="display:none"><p><span class="value"></span> </p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{leftFingerDetails.attributes.primary[0].text | split:'first'}}</span> {{leftFingerDetails.attributes.primary[0].text | split:'second'}}</p></span>
                         <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">26.0</span><span class="value">%</span> </p></span>
                         <span class="bonus-value bonus-67 long-bonus" style="display:none"><p>Critical Hit Chance Increased by <span class="value">5.0</span><span class="value">%</span></p></span>
                         <span class="bonus-value bonus-129 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">58</span> Fire Resistance</p></span>
@@ -436,10 +436,10 @@
                 </li>
 
                 <li class="gear-label slot-neck">
-                    <a href="" data-d3tooltip="item/CkYIlsb_5w4SBwgEFazFRGQdDmt__R1v_EXEHWdZF7UdmLorUh228ewaHZ5ssxQiCwgBFYFCAwAYEiAaMAk4jAJAAFAMYN4CGNiWpsQMUAJYAA" class="label-link d3-color-yellow">
+                    <a href="" data-d3tooltip="item/CkYIlsb_5w4SBwgEFazFRGQdDmt__R1v_EXEHWdZF7UdmLorUh228ewaHZ5ssxQiCwgBFYFCAwAYEiAaMAk4jAJAAFAMYN4CGNiWpsQMUAJYAA" class="label-link d3-color-{{heroDetails.items.neck.displayColor}}">
                         <span class="item-name">{{heroDetails.items.neck.name}}</span>
-                        <span class="bonus-value bonus-7 long-bonus" style="display:none"><p><span class="value">+22</span> Maximum Damage</p></span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+149</span> Strength</p></span>
+                        <span class="bonus-value bonus-7 long-bonus" style="display:none"><p><span class="value"></span> </p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{neckDetails.attributes.primary[0].text | split:'first'}}</span> {{neckDetails.attributes.primary[0].text | split:'second'}}</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+110</span> Vitality</p></span>
                         <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">68.0</span><span class="value">%</span> </p></span>
                         <span class="bonus-value bonus-67 long-bonus" style="display:none"><p>Critical Hit Chance Increased by <span class="value">10.0</span><span class="value">%</span></p></span>
@@ -466,7 +466,7 @@
 
         <div class="gear-bonuses" id="bonuses">
 
-            <h3 class="header-3"><span class="help-icon tip" data-tooltip="#gear-bonuses-tooltip"></span>Gear Bonuses</h3>
+            <h3 class="header-3"><span class="help-icon tip" data-tooltip="#gear-bonuses-tooltip"></span>Stat Attributes</h3>
 
             <div id="gear-bonuses-tooltip" style="display: none;">
                 <div class="profile-tooltip">
@@ -479,27 +479,32 @@
             <ul>
                 <li>
                     <a href="javascript:;" class="bonus-stat" data-bonus-index="50">
-                        <span class="bonus-radio active"></span><p><span class="value">+2320</span> Strength</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;" class="bonus-stat" data-bonus-index="67">
-                        <span class="bonus-radio"></span><p>Critical Hit Chance Increased by <span class="value">42.0</span><span class="value">%</span></p>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;" class="bonus-stat" data-bonus-index="64">
-                        <span class="bonus-radio"></span><p>Critical Hit Damage Increased by <span class="value">488.0</span><span class="value">%</span> </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;" class="bonus-stat" data-bonus-index="53">
-                        <span class="bonus-radio"></span><p><span class="value">+1004</span> Vitality</p>
+                        <span class="bonus-radio active"></span><p><span class="value">{{heroDetails.stats.life}}</span> Life</p>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;" class="bonus-stat" data-bonus-index="54">
-                        <span class="bonus-radio"></span><p><span class="value">+</span><span class="value">381</span> Resistance to All Elements</p>
+                        <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.damage}}</span> Damage</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="bonus-stat" data-bonus-index="67">
+                        <span class="bonus-radio"></span><p> <span class="value">{{heroDetails.stats.strength}}</span> Strength</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="bonus-stat" data-bonus-index="64">
+                        <span class="bonus-radio"></span><p> <span class="value">{{heroDetails.stats.dexterity}}</span> Dexterity</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="bonus-stat" data-bonus-index="53">
+                        <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.vitality}}</span> Vitality</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="bonus-stat" data-bonus-index="54">
+                        <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.intelligence}}</span> Intelligence</p>
                     </a>
                 </li>
             </ul>

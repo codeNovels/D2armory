@@ -83,6 +83,7 @@
     <Content Include="images\skill-overlays.png" />
     <Content Include="Index.html" />
     <Content Include="controllers\accountController.js" />
+    <Content Include="services\services.js" />
     <Content Include="sound\bg-music.mp3" />
     <Content Include="stylesheets\common-game-site.min.css" />
     <Content Include="stylesheets\d3.css" />
