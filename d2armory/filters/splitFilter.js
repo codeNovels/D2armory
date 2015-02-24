@@ -8,32 +8,17 @@ function splitFilter() {
             return value;
         }
 
-        var array = value.split(' ');
+        var array = value.split();
 
         switch (index) {
             case 'first':
                 return array[0];
             case 'second':
                 return array[1];
+            case 'third':
+                return array[2];
             default:
                 return value;
         }
     }
-};
-
-
-angular
-    .module("d2armory")
-    .filter("gender", genderFilter);
-
-function genderFilter() {
-    return function (gender) {
-        if (gender == 0) {
-            return "male";
-        } else {
-            return "female";
-        };
-
-    };
-
 };

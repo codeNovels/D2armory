@@ -20,6 +20,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
     <script src="/controllers/accountController.js"></script>
     <script src="/filters/splitFilter.js"></script>
+    <script src="/filters/genderConverter.js"></script>
     <script src="/heroController.js"></script>
     <title>d2armory</title>
 </head>
@@ -374,12 +375,12 @@
                     <a href="" data-d3tooltip="item/Cl8IpaXu4A4SBwgEFQhjE3Ad3YbwJh2GAmPqHb7m3bUd1KFb4B2RqGXGHWSRAaMwCTilAkAAUBJg_QJqJAoMCAAQlpPIhoOAgOAQEhQIABIHCAQVHpaumDAJOABAAZABABiQjJuBDlACWAA" class="label-link d3-color-{{heroDetails.items.mainHand.displayColor}}">
                         <span class="item-name">{{heroDetails.items.mainHand.name}}</span>
                         <span class="weapon-dps">
-                            <span class="value">1186.7</span> DPS
+                            <span class="value">{{mainHandDetails.dps.max | number:1}}</span> DPS
                         </span>
                         <span class="bonus-value bonus-0 long-bonus" style="display:none"><p><span class="value">+278</span> Minimum Damage</p></span>
                         <span class="bonus-value bonus-1 long-bonus" style="display:none"><p><span class="value">+317</span> Maximum Damage</p></span>
                         <span class="bonus-value bonus-40 long-bonus" style="display:none"><p><span class="value">+39</span><span class="value">%</span> Damage</p></span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+196</span> Strength</p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{mainHandDetails.attributes.primary[0].text | split:'first'}}</span> {{mainHandDetails.attributes.primary[0].text | split:'second'}} {{mainHandDetails.attributes.primary[0].text | split:'third'}}</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+77</span> Vitality</p></span>
                         <span class="bonus-value bonus-55 long-bonus" style="display:none"><p><span class="value">+0.23</span> Attacks per Second</p></span>
                         <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">100.0</span><span class="value">%</span> </p></span>
@@ -391,11 +392,11 @@
                     <a href="/d3/en/item/bulkathoss-warrior-blood-1OE7NH" data-d3tooltip="item/CmMIv86wlQUSBwgEFeVyNmMd7TrCNh1nWRe1Hee-mnEd2ZmE2B2gbLMUHRa8a7UwCTjbAUAAUBJgnwJqKAoMCAAQ8_e2voWAgMAoEhgIneiXjA8SBwgEFR6WrpgwDTgAQAGQAQAYysuzswxQAlgAoAHKy7OzDA" class="label-link d3-color-{{heroDetails.items.offHand.displayColor}}">
                         <span class="item-name">{{heroDetails.items.offHand.name}}</span>
                         <span class="weapon-dps">
-                            <span class="value">940.0</span> DPS
+                            <span class="value">{{offHandDetails.dps.max | number:1}}</span> DPS
                         </span>
                         <span class="bonus-value bonus-13 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">276</span>–<span class="value">534</span> Holy Damage</p></span>
                         <span class="bonus-value bonus-40 long-bonus" style="display:none"><p><span class="value">+49</span><span class="value">%</span> Damage</p></span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+196</span> Strength</p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{offHandDetails.attributes.primary[0].text | split:'first'}}</span> {{offHandDetails.attributes.primary[0].text | split:'second'}} {{offHandDetails.attributes.primary[0].text | split:'third'}}</p></span>
                         <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">187.0</span><span class="value">%</span> </p></span>
                         <span class="bonus-value bonus-75 long-bonus" style="display:none"><p>Increases damage against elites by <span class="value">5.0</span><span class="value">%</span></p></span>
                     </a>
