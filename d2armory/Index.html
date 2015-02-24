@@ -19,6 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
     <script src="/controllers/accountController.js"></script>
+    <script src="/filters/splitFilter.js"></script>
     <script src="/heroController.js"></script>
     <title>d2armory</title>
 </head>
@@ -291,7 +292,7 @@
                 <li class="gear-label slot-head">
                     <a href="" data-d3tooltip="item/Cl8ImqPk0QQSBwgEFYdTxZEd3Ubxtx2H9XtuHXYe9g0d1maKlB3SXcJLHYYCY-owCTj0AUAAUBJgvgJqJAoMCAAQ9aS5h4OAgOAQEhQIABIHCAQVE5_YqzAJOABAAZABABjxsdXjDVACWACgAfGx1eMNoAHokMvhA6ABosHHvg0" class="label-link d3-color-green">
                         <span class="item-name">{{heroDetails.items.head.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{itemDetails.attributes.primary[0].text}}   {{b[0]}}</span> Strength</p></span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{itemDetails.attributes.primary[0].text | split:'first'}}</span> {{itemDetails.attributes.primary[0].text | split:'second'}}</p></span>
                         <span class="bonus-value bonus-51 long-bonus" style="display:none"><p><span class="value">+38</span> Dexterity</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+46</span> Vitality</p></span>
                         <span class="bonus-value bonus-59 long-bonus" style="display:none"><p><span class="value">+29</span><span class="value">%</span> Life</p></span>

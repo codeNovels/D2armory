@@ -9,7 +9,6 @@ accountController.$inject = ['$scope', '$http'];
 function accountController($scope, $http) {
     $scope.battleTag = "Talentz-1274";
 
-
     var onUserComplete = function (response) {
         $scope.account = response.data;
     };
@@ -47,10 +46,11 @@ function accountController($scope, $http) {
             .then(onItemComplete, onError);
     };
 
-    $scope.$watch("heroDetails", function () { $scope.getItemDetails(heroDetails.items.head.tooltipParams) });
-
-
-
+    $scope.$watch("heroDetails", function (newValue, oldValue) {
+        if (newValue) {
+            $scope.getItemDetails($scope.heroDetails.items.head.tooltipParams)
+        }
+    });
 
     $scope.getDetails = function (battleTag, heroID, itemID) {
 

@@ -76,6 +76,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="filters\splitFilter.js" />
     <Content Include="images\diablo_3_reaper_of_souls-wide.jpg" />
     <Content Include="images\index-background.jpg" />
     <Content Include="images\inventory-lines.png" />
