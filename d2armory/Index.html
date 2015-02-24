@@ -38,7 +38,7 @@
                     </div>
                     <div ng-repeat="hero in account.heroes">
                         <a>
-                            <div ng-click="chooseHero(battleTag, hero.id">
+                            <div ng-click="getDetails(battleTag, hero.id)">
                                 {{hero.name}} {{hero.class}} {{hero.level}} {{hero.id}}
                             </div>
                         </a>
@@ -52,7 +52,7 @@
 
         <h2 class="class">
             <a href="">
-                <span><strong>60<span class="paragon-level">(110)</span></strong> Barbarian</span>
+                <span><strong>{{heroDetails.level}}<span class="paragon-level">({{heroDetails.paragonLevel}})</span></strong> {{heroDetails.class}}</span>
             </a>
         </h2>
 
@@ -63,13 +63,14 @@
             <ul class="gear-slots">
                 <li class="slot-head">
                     <a class="slot-link" href="" data-d3tooltip="item/Cl8ImqPk0QQSBwgEFYdTxZEd3Ubxtx2H9XtuHXYe9g0d1maKlB3SXcJLHYYCY-owCTj0AUAAUBJgvgJqJAoMCAAQ9aS5h4OAgOAQEhQIABIHCAQVE5_YqzAJOABAAZABABjxsdXjDVACWACgAfGx1eMNoAHokMvhA6ABosHHvg0">
-                        <span class="d3-icon d3-icon-item d3-icon-item-green">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.head.displayColor}}">
+                            
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/unique_helm_008_104_demonhunter_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.head.icon}}.png" alt="" />
                         </span>
                         <span class="sockets-wrapper">
                             <span class="sockets-align">
@@ -83,13 +84,13 @@
                 </li>
                 <li class="slot-torso">
                     <a class="slot-link" href="" data-d3tooltip="item/CrcBCJuSudcDEgcIBBU0ZBkeHbnx7Bod3iVSyx0o_n0BHZMCY-odiL6-IR1bToDJMAk4sQJAAFASYIsDaigKDAgAEKjpy-iEgICACRIYCP7ihc0DEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEL7py-iEgICACRIYCLH__PgGEgcIBBUTn9irMAk4AEABkAEAaigKDAgAENKnmKaEgIDAEhIYCL6s1q4HEgcIBBUTn9irMAk4AEABkAEAGOiQy-EDUAJYAKAB8bHV4w2gAeiQy-EDoAGiwce-DQ">
-                        <span class="d3-icon d3-icon-item d3-icon-item-green">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.head.displayColor}}">
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/unique_chest_013_104_demonhunter_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.torso.icon}}.png" alt="" />
                         </span>
                         <span class="sockets-wrapper">
                             <span class="sockets-align">
@@ -109,13 +110,13 @@
                 </li>
                 <li class="slot-feet">
                     <a class="slot-link" href="" data-d3tooltip="item/CmMI3a-qmAMSBwgEFehulOgdvpUo_B2tx-VxHTZpS5MdW06AyR2H9XtuHdJdwkswCTi_AkAAUBJgnQNqKAoMCAAQtqnFl4GAgMAHEhgI64OiyQwSBwgEFWb1i18wCTgAQAGQAQAYr8Tc9gJQAlgA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-orange">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.feet.displayColor}}">
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/unique_boots_008_104_demonhunter_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.feet.icon}}.png" alt="" />
                         </span>
                         <span class="sockets-wrapper">
                             <span class="sockets-align">
@@ -129,26 +130,26 @@
                 </li>
                 <li class="slot-hands">
                     <a class="slot-link" href="" data-d3tooltip="item/CjkI8ZKmkwISBwgEFVHw6GsduNItxh0PXPT8HdZmipQdDmt__R3SXcJLHcJqmxEwCTj9AUAAUBJgyQIYosHHvg1QAlgAoAHxsdXjDaAB6JDL4QOgAaLBx74N">
-                        <span class="d3-icon d3-icon-item d3-icon-item-green">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.hands.displayColor}}">
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/unique_gloves_008_104_demonhunter_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.hands.icon}}.png" alt="" />
                         </span>
                     </a>
 
                 </li>
                 <li class="slot-shoulders">
                     <a class="slot-link" href="" data-d3tooltip="item/CkgIm86syAwSBwgEFdD4yBUdIuzMuB2gbLMUHeBElDUdslfV7h3eJVLLHcJqmxEiCwgBFYpCAwAYKCAkMAk41wNAAEgBUBBg2wQYoOPH3AJQAlgA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-yellow">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.shoulders.displayColor}}">
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/shoulders_206_barbarian_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.shoulders.icon}}.png" alt="" />
                         </span>
                     </a>
                     <a href="/d3/en/item/abyssal-dye" class="item-dye" data-d3tooltip="item/abyssal-dye">
@@ -158,13 +159,13 @@
                 </li>
                 <li class="slot-legs">
                     <a class="slot-link" href="" data-d3tooltip="item/Co0BCNqwjtgIEgcIBBVnIxsNHYi-viEdCupQCB2Xi8MRHXWx7PAd0HHzPB2vU8M2MAk4ugJAAFASYJYDaigKDAgAEIjcwZmBgIDAHxIYCJ-ClbsDEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEOvrpKqHgIDgGRIYCITExfoFEgcIBBUTn9irMAk4AEABkAEAGM6N2dEBUAJYAKABzo3Z0QE">
-                        <span class="d3-icon d3-icon-item d3-icon-item-green">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.legs.displayColor}}">
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/unique_pants_008_104_demonhunter_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.legs.icon}}.png" alt="" />
                         </span>
                         <span class="sockets-wrapper">
                             <span class="sockets-align">
@@ -181,26 +182,26 @@
                 </li>
                 <li class="slot-bracers">
                     <a class="slot-link" href="" data-d3tooltip="item/CkYIzf3k9AsSBwgEFdYsyssddh72DR0GVAUXHdwSlCwdKRJz4B0NPj-7HV_MtigiCwgBFXZCAwAYHiAAMAk4xAJAAFAMYOEDGNPMrsMGUAJYAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-yellow">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.bracers.displayColor}}">
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/bracers_203_demonhunter_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.bracers.icon}}.png" alt="" />
                         </span>
                     </a>
 
                 </li>
                 <li class="slot-mainHand">
                     <a class="slot-link" href="" data-d3tooltip="item/Cl8IpaXu4A4SBwgEFQhjE3Ad3YbwJh2GAmPqHb7m3bUd1KFb4B2RqGXGHWSRAaMwCTilAkAAUBJg_QJqJAoMCAAQlpPIhoOAgOAQEhQIABIHCAQVHpaumDAJOABAAZABABiQjJuBDlACWAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-orange">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.mainHand.displayColor}}">
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/unique_mace_1h_001_104_demonhunter_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.mainHand.icon}}.png" alt="" />
                         </span>
                         <span class="sockets-wrapper">
                             <span class="sockets-align">
@@ -214,13 +215,13 @@
                 </li>
                 <li class="slot-offHand">
                     <a class="slot-link" href="" data-d3tooltip="item/CmMIv86wlQUSBwgEFeVyNmMd7TrCNh1nWRe1Hee-mnEd2ZmE2B2gbLMUHRa8a7UwCTjbAUAAUBJgnwJqKAoMCAAQ8_e2voWAgMAoEhgIneiXjA8SBwgEFR6WrpgwDTgAQAGQAQAYysuzswxQAlgAoAHKy7OzDA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-green">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.offHand.displayColor}}">
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/unique_mighty_1h_011_104_demonhunter_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.offHand.icon}}.png" alt="" />
                         </span>
                         <span class="sockets-wrapper">
                             <span class="sockets-align">
@@ -234,52 +235,52 @@
                 </li>
                 <li class="slot-waist">
                     <a class="slot-link" href="" data-d3tooltip="item/CjgIyO7h7w0SBwgEFclSipsdn2yzFB0pEnPgHcxse4MddbHs8B16JH9KHQ-QCvwwCTgOQABQEmCEAhjttK3HDFACWAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-orange">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.waist.displayColor}}">
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/unique_belt_009_104_demonhunter_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.waist.icon}}.png" alt="" />
                         </span>
                     </a>
 
                 </li>
                 <li class="slot-rightFinger">
                     <a class="slot-link" href="" data-d3tooltip="item/CkAI1uPbKBIHCAQVNFVdRB12HvYNHdbxGnIdxZ6okR1DfhQbHZi6K1IiCwgBFWxCAwAYFiAMMAk4rAJAAFAOYIYDGOjU6sUIUAJYAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-yellow">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.rightFinger.displayColor}}">
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/ring_23_demonhunter_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.rightFinger.icon}}.png" alt="" />
                         </span>
                     </a>
 
                 </li>
                 <li class="slot-leftFinger">
                     <a class="slot-link" href="" data-d3tooltip="item/CkEIu_2b1gYSBwgEFTJVXUQddh72DR2Ivr4hHSGHPlYdP0ceDB06RK6bIgsIARV1QgMAGBIgHjAJONUCQABQDmC3Axjk1OrFCFACWAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-yellow">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.leftFinger.displayColor}}">
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/ring_21_demonhunter_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.leftFinger.icon}}.png" alt="" />
                         </span>
                     </a>
 
                 </li>
                 <li class="slot-neck">
                     <a class="slot-link" href="" data-d3tooltip="item/CkYIlsb_5w4SBwgEFazFRGQdDmt__R1v_EXEHWdZF7UdmLorUh228ewaHZ5ssxQiCwgBFYFCAwAYEiAaMAk4jAJAAFAMYN4CGNiWpsQMUAJYAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-yellow">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.neck.displayColor}}">
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img src="http://media.blizzard.com/d3/icons/items/large/amulet13_demonhunter_male.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.neck.icon}}.png" alt="" />
                         </span>
                     </a>
 
@@ -289,8 +290,8 @@
 
                 <li class="gear-label slot-head">
                     <a href="" data-d3tooltip="item/Cl8ImqPk0QQSBwgEFYdTxZEd3Ubxtx2H9XtuHXYe9g0d1maKlB3SXcJLHYYCY-owCTj0AUAAUBJgvgJqJAoMCAAQ9aS5h4OAgOAQEhQIABIHCAQVE5_YqzAJOABAAZABABjxsdXjDVACWACgAfGx1eMNoAHokMvhA6ABosHHvg0" class="label-link d3-color-green">
-                        <span class="item-name">Immortal King's Triumph</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+193</span> Strength</p></span>
+                        <span class="item-name">{{heroDetails.items.head.name}}</span>
+                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{itemDetails.attributes.primary[0].text}}   {{b[0]}}</span> Strength</p></span>
                         <span class="bonus-value bonus-51 long-bonus" style="display:none"><p><span class="value">+38</span> Dexterity</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+46</span> Vitality</p></span>
                         <span class="bonus-value bonus-59 long-bonus" style="display:none"><p><span class="value">+29</span><span class="value">%</span> Life</p></span>
@@ -301,7 +302,7 @@
 
                 <li class="gear-label slot-torso">
                     <a href="" data-d3tooltip="item/CrcBCJuSudcDEgcIBBU0ZBkeHbnx7Bod3iVSyx0o_n0BHZMCY-odiL6-IR1bToDJMAk4sQJAAFASYIsDaigKDAgAEKjpy-iEgICACRIYCP7ihc0DEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEL7py-iEgICACRIYCLH__PgGEgcIBBUTn9irMAk4AEABkAEAaigKDAgAENKnmKaEgIDAEhIYCL6s1q4HEgcIBBUTn9irMAk4AEABkAEAGOiQy-EDUAJYAKAB8bHV4w2gAeiQy-EDoAGiwce-DQ" class="label-link d3-color-green">
-                        <span class="item-name">Immortal King's Eternal Reign</span>
+                        <span class="item-name">{{heroDetails.items.torso.name}}</span>
                         <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+163</span> Strength</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+392</span> Vitality</p></span>
                         <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">72</span> Resistance to All Elements</p></span>
@@ -311,7 +312,7 @@
 
                 <li class="gear-label slot-feet">
                     <a href="" data-d3tooltip="item/CmMI3a-qmAMSBwgEFehulOgdvpUo_B2tx-VxHTZpS5MdW06AyR2H9XtuHdJdwkswCTi_AkAAUBJgnQNqKAoMCAAQtqnFl4GAgMAHEhgI64OiyQwSBwgEFWb1i18wCTgAQAGQAQAYr8Tc9gJQAlgA" class="label-link d3-color-orange">
-                        <span class="item-name">Ice Climbers</span>
+                        <span class="item-name">{{heroDetails.items.feet.name}}</span>
                         <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+337</span> Strength</p></span>
                         <span class="bonus-value bonus-52 long-bonus" style="display:none"><p><span class="value">+90</span> Intelligence</p></span>
                         <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">72</span> Resistance to All Elements</p></span>
@@ -324,7 +325,7 @@
 
                 <li class="gear-label slot-hands">
                     <a href="" data-d3tooltip="item/CjkI8ZKmkwISBwgEFVHw6GsduNItxh0PXPT8HdZmipQdDmt__R3SXcJLHcJqmxEwCTj9AUAAUBJgyQIYosHHvg1QAlgAoAHxsdXjDaAB6JDL4QOgAaLBx74N" class="label-link d3-color-green">
-                        <span class="item-name">Immortal King's Irons</span>
+                        <span class="item-name">{{heroDetails.items.hands.name}}</span>
                         <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+193</span> Strength</p></span>
                         <span class="bonus-value bonus-52 long-bonus" style="display:none"><p><span class="value">+113</span> Intelligence</p></span>
                         <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">33.0</span><span class="value">%</span> </p></span>
@@ -336,7 +337,7 @@
 
                 <li class="gear-label slot-shoulders">
                     <a href="/d3/en/item/archon-spaulders" data-d3tooltip="item/CkgIm86syAwSBwgEFdD4yBUdIuzMuB2gbLMUHeBElDUdslfV7h3eJVLLHcJqmxEiCwgBFYpCAwAYKCAkMAk41wNAAEgBUBBg2wQYoOPH3AJQAlgA" class="label-link d3-color-yellow">
-                        <span class="item-name">The Nexus</span>
+                        <span class="item-name">{{heroDetails.items.shoulders.name}}</span>
                         <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+259</span> Strength</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+133</span> Vitality</p></span>
                         <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">68</span> Resistance to All Elements</p></span>
@@ -347,7 +348,7 @@
 
                 <li class="gear-label slot-legs">
                     <a href="" data-d3tooltip="item/Co0BCNqwjtgIEgcIBBVnIxsNHYi-viEdCupQCB2Xi8MRHXWx7PAd0HHzPB2vU8M2MAk4ugJAAFASYJYDaigKDAgAEIjcwZmBgIDAHxIYCJ-ClbsDEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEOvrpKqHgIDgGRIYCITExfoFEgcIBBUTn9irMAk4AEABkAEAGM6N2dEBUAJYAKABzo3Z0QE" class="label-link d3-color-green">
-                        <span class="item-name">Inna's Temperance</span>
+                        <span class="item-name">{{heroDetails.items.legs.name}}</span>
                         <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+91</span> Strength</p></span>
                         <span class="bonus-value bonus-51 long-bonus" style="display:none"><p><span class="value">+98</span> Dexterity</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+116</span> Vitality</p></span>
@@ -359,7 +360,7 @@
 
                 <li class="gear-label slot-bracers">
                     <a href="/d3/en/item/warbands" data-d3tooltip="item/CkYIzf3k9AsSBwgEFdYsyssddh72DR0GVAUXHdwSlCwdKRJz4B0NPj-7HV_MtigiCwgBFXZCAwAYHiAAMAk4xAJAAFAMYOEDGNPMrsMGUAJYAA" class="label-link d3-color-yellow">
-                        <span class="item-name">Protection Accolade</span>
+                        <span class="item-name">{{heroDetails.items.bracers.name}}</span>
                         <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+133</span> Strength</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+130</span> Vitality</p></span>
                         <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">53</span> Resistance to All Elements</p></span>
@@ -370,7 +371,7 @@
 
                 <li class="gear-label slot-mainHand">
                     <a href="" data-d3tooltip="item/Cl8IpaXu4A4SBwgEFQhjE3Ad3YbwJh2GAmPqHb7m3bUd1KFb4B2RqGXGHWSRAaMwCTilAkAAUBJg_QJqJAoMCAAQlpPIhoOAgOAQEhQIABIHCAQVHpaumDAJOABAAZABABiQjJuBDlACWAA" class="label-link d3-color-orange">
-                        <span class="item-name">Echoing Fury</span>
+                        <span class="item-name">{{heroDetails.items.mainHand.name}}</span>
                         <span class="weapon-dps">
                             <span class="value">1186.7</span> DPS
                         </span>
@@ -387,7 +388,7 @@
 
                 <li class="gear-label slot-offHand">
                     <a href="/d3/en/item/bulkathoss-warrior-blood-1OE7NH" data-d3tooltip="item/CmMIv86wlQUSBwgEFeVyNmMd7TrCNh1nWRe1Hee-mnEd2ZmE2B2gbLMUHRa8a7UwCTjbAUAAUBJgnwJqKAoMCAAQ8_e2voWAgMAoEhgIneiXjA8SBwgEFR6WrpgwDTgAQAGQAQAYysuzswxQAlgAoAHKy7OzDA" class="label-link d3-color-green">
-                        <span class="item-name">Bul-Kathos's Warrior Blood</span>
+                        <span class="item-name">{{heroDetails.items.offHand.name}}</span>
                         <span class="weapon-dps">
                             <span class="value">940.0</span> DPS
                         </span>
@@ -401,7 +402,7 @@
 
                 <li class="gear-label slot-waist">
                     <a href="" data-d3tooltip="item/CjgIyO7h7w0SBwgEFclSipsdn2yzFB0pEnPgHcxse4MddbHs8B16JH9KHQ-QCvwwCTgOQABQEmCEAhjttK3HDFACWAA" class="label-link d3-color-orange">
-                        <span class="item-name">The Witching Hour</span>
+                        <span class="item-name">{{heroDetails.items.waist.name}}</span>
                         <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+152</span> Strength</p></span>
                         <span class="bonus-value bonus-52 long-bonus" style="display:none"><p><span class="value">+99</span> Intelligence</p></span>
                         <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">56</span> Resistance to All Elements</p></span>
@@ -413,7 +414,7 @@
 
                 <li class="gear-label slot-rightFinger">
                     <a href="/d3/en/item/ring-1fCyBm" data-d3tooltip="item/CkAI1uPbKBIHCAQVNFVdRB12HvYNHdbxGnIdxZ6okR1DfhQbHZi6K1IiCwgBFWxCAwAYFiAMMAk4rAJAAFAOYIYDGOjU6sUIUAJYAA" class="label-link d3-color-yellow">
-                        <span class="item-name">Bond Wound</span>
+                        <span class="item-name">{{heroDetails.items.rightFinger.name}}</span>
                         <span class="bonus-value bonus-7 long-bonus" style="display:none"><p><span class="value">+24</span> Maximum Damage</p></span>
                         <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+158</span> Strength</p></span>
                         <span class="bonus-value bonus-51 long-bonus" style="display:none"><p><span class="value">+88</span> Dexterity</p></span>
@@ -424,7 +425,7 @@
 
                 <li class="gear-label slot-leftFinger">
                     <a href="" data-d3tooltip="item/CkEIu_2b1gYSBwgEFTJVXUQddh72DR2Ivr4hHSGHPlYdP0ceDB06RK6bIgsIARV1QgMAGBIgHjAJONUCQABQDmC3Axjk1OrFCFACWAA" class="label-link d3-color-yellow">
-                        <span class="item-name">Faith Trial</span>
+                        <span class="item-name">{{heroDetails.items.leftFinger.name}}</span>
                         <span class="bonus-value bonus-4 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">30</span>–<span class="value">66</span> Damage</p></span>
                         <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+100</span> Strength</p></span>
                         <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">26.0</span><span class="value">%</span> </p></span>
@@ -435,7 +436,7 @@
 
                 <li class="gear-label slot-neck">
                     <a href="" data-d3tooltip="item/CkYIlsb_5w4SBwgEFazFRGQdDmt__R1v_EXEHWdZF7UdmLorUh228ewaHZ5ssxQiCwgBFYFCAwAYEiAaMAk4jAJAAFAMYN4CGNiWpsQMUAJYAA" class="label-link d3-color-yellow">
-                        <span class="item-name">Eminence Redoubt</span>
+                        <span class="item-name">{{heroDetails.items.neck.name}}</span>
                         <span class="bonus-value bonus-7 long-bonus" style="display:none"><p><span class="value">+22</span> Maximum Damage</p></span>
                         <span class="bonus-value bonus-50 long-bonus"><p><span class="value">+149</span> Strength</p></span>
                         <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+110</span> Vitality</p></span>
