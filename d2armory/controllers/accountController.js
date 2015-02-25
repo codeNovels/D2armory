@@ -14,7 +14,7 @@ function accountController($scope, $http, apiUrl) {
 
     $scope.items = {};
 
-    var slotMap = { 'shoulder': 'shoulders', 'chest': 'torso' }; // object that identifies slot discrepancies between hero details and item details
+    var slotMap = { 'shoulder': 'shoulders', 'chest': 'torso', 'right-finger': 'rightFinger', 'left-finger': 'leftFinger', 'left-hand': 'mainHand', 'right-hand': 'offHand' }; // object that identifies slot discrepancies between hero details and item details
 
     //ACCOUNT
     var onUserComplete = function (response) {
