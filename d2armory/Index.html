@@ -63,16 +63,16 @@
         <div class="paperdoll" id="paperdoll">
             <div class="weapon-flourish off-hand-flourish elemental-holy"></div>
             <ul class="gear-slots">
-                <li class="slot-head">
-                    <a class="slot-link" href="" data-d3tooltip="item/Cl8ImqPk0QQSBwgEFYdTxZEd3Ubxtx2H9XtuHXYe9g0d1maKlB3SXcJLHYYCY-owCTj0AUAAUBJgvgJqJAoMCAAQ9aS5h4OAgOAQEhQIABIHCAQVE5_YqzAJOABAAZABABjxsdXjDVACWACgAfGx1eMNoAHokMvhA6ABosHHvg0">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.head.displayColor}}">
+                <li class="slot-{{slot}}" ng-repeat="slot in slots" data-ng-if="heroDetails.items[slot]">
+                    <a class="slot-link" href="" data-d3tooltip="items[slot + 'Details'].tooltipParams">
+                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items[slot].displayColor}}">
 
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
                         </span>
                         <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.head.icon}}.png" alt="" />
+                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items[slot].icon}}.png" alt="" />
                         </span>
                         <span class="sockets-wrapper">
                             <span class="sockets-align">
@@ -82,211 +82,6 @@
                             </span>
                         </span>
                     </a>
-
-                </li>
-                <li class="slot-torso">
-                    <a class="slot-link" href="" data-d3tooltip="item/CrcBCJuSudcDEgcIBBU0ZBkeHbnx7Bod3iVSyx0o_n0BHZMCY-odiL6-IR1bToDJMAk4sQJAAFASYIsDaigKDAgAEKjpy-iEgICACRIYCP7ihc0DEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEL7py-iEgICACRIYCLH__PgGEgcIBBUTn9irMAk4AEABkAEAaigKDAgAENKnmKaEgIDAEhIYCL6s1q4HEgcIBBUTn9irMAk4AEABkAEAGOiQy-EDUAJYAKAB8bHV4w2gAeiQy-EDoAGiwce-DQ">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.head.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.torso.icon}}.png" alt="" />
-                        </span>
-                        <span class="sockets-wrapper">
-                            <span class="sockets-align">
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/amethyst_14_demonhunter_male.png" />
-                                </span><br />
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/amethyst_14_demonhunter_male.png" />
-                                </span><br />
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/amethyst_14_demonhunter_male.png" />
-                                </span><br />
-                            </span>
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-feet">
-                    <a class="slot-link" href="" data-d3tooltip="item/CmMI3a-qmAMSBwgEFehulOgdvpUo_B2tx-VxHTZpS5MdW06AyR2H9XtuHdJdwkswCTi_AkAAUBJgnQNqKAoMCAAQtqnFl4GAgMAHEhgI64OiyQwSBwgEFWb1i18wCTgAQAGQAQAYr8Tc9gJQAlgA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.feet.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.feet.icon}}.png" alt="" />
-                        </span>
-                        <span class="sockets-wrapper">
-                            <span class="sockets-align">
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/ruby_14_demonhunter_male.png" />
-                                </span><br />
-                            </span>
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-hands">
-                    <a class="slot-link" href="" data-d3tooltip="item/CjkI8ZKmkwISBwgEFVHw6GsduNItxh0PXPT8HdZmipQdDmt__R3SXcJLHcJqmxEwCTj9AUAAUBJgyQIYosHHvg1QAlgAoAHxsdXjDaAB6JDL4QOgAaLBx74N">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.hands.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.hands.icon}}.png" alt="" />
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-shoulders">
-                    <a class="slot-link" href="" data-d3tooltip="item/CkgIm86syAwSBwgEFdD4yBUdIuzMuB2gbLMUHeBElDUdslfV7h3eJVLLHcJqmxEiCwgBFYpCAwAYKCAkMAk41wNAAEgBUBBg2wQYoOPH3AJQAlgA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.shoulders.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.shoulders.icon}}.png" alt="" />
-                        </span>
-                    </a>
-                    <a href="/d3/en/item/abyssal-dye" class="item-dye" data-d3tooltip="item/abyssal-dye">
-                        <img src="http://media.blizzard.com/d3/icons/items/small/dye_20_demonhunter_male.png" />
-                    </a>
-
-                </li>
-                <li class="slot-legs">
-                    <a class="slot-link" href="" data-d3tooltip="item/Co0BCNqwjtgIEgcIBBVnIxsNHYi-viEdCupQCB2Xi8MRHXWx7PAd0HHzPB2vU8M2MAk4ugJAAFASYJYDaigKDAgAEIjcwZmBgIDAHxIYCJ-ClbsDEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEOvrpKqHgIDgGRIYCITExfoFEgcIBBUTn9irMAk4AEABkAEAGM6N2dEBUAJYAKABzo3Z0QE">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.legs.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.legs.icon}}.png" alt="" />
-                        </span>
-                        <span class="sockets-wrapper">
-                            <span class="sockets-align">
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/amethyst_14_demonhunter_male.png" />
-                                </span><br />
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/amethyst_14_demonhunter_male.png" />
-                                </span><br />
-                            </span>
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-bracers">
-                    <a class="slot-link" href="" data-d3tooltip="item/CkYIzf3k9AsSBwgEFdYsyssddh72DR0GVAUXHdwSlCwdKRJz4B0NPj-7HV_MtigiCwgBFXZCAwAYHiAAMAk4xAJAAFAMYOEDGNPMrsMGUAJYAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.bracers.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.bracers.icon}}.png" alt="" />
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-mainHand">
-                    <a class="slot-link" href="" data-d3tooltip="item/Cl8IpaXu4A4SBwgEFQhjE3Ad3YbwJh2GAmPqHb7m3bUd1KFb4B2RqGXGHWSRAaMwCTilAkAAUBJg_QJqJAoMCAAQlpPIhoOAgOAQEhQIABIHCAQVHpaumDAJOABAAZABABiQjJuBDlACWAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.mainHand.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.mainHand.icon}}.png" alt="" />
-                        </span>
-                        <span class="sockets-wrapper">
-                            <span class="sockets-align">
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/emerald_14_demonhunter_male.png" />
-                                </span><br />
-                            </span>
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-offHand">
-                    <a class="slot-link" href="" data-d3tooltip="item/CmMIv86wlQUSBwgEFeVyNmMd7TrCNh1nWRe1Hee-mnEd2ZmE2B2gbLMUHRa8a7UwCTjbAUAAUBJgnwJqKAoMCAAQ8_e2voWAgMAoEhgIneiXjA8SBwgEFR6WrpgwDTgAQAGQAQAYysuzswxQAlgAoAHKy7OzDA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.offHand.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.offHand.icon}}.png" alt="" />
-                        </span>
-                        <span class="sockets-wrapper">
-                            <span class="sockets-align">
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/emerald_14_demonhunter_male.png" />
-                                </span><br />
-                            </span>
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-waist">
-                    <a class="slot-link" href="" data-d3tooltip="item/CjgIyO7h7w0SBwgEFclSipsdn2yzFB0pEnPgHcxse4MddbHs8B16JH9KHQ-QCvwwCTgOQABQEmCEAhjttK3HDFACWAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.waist.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.waist.icon}}.png" alt="" />
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-rightFinger">
-                    <a class="slot-link" href="" data-d3tooltip="item/CkAI1uPbKBIHCAQVNFVdRB12HvYNHdbxGnIdxZ6okR1DfhQbHZi6K1IiCwgBFWxCAwAYFiAMMAk4rAJAAFAOYIYDGOjU6sUIUAJYAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.rightFinger.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.rightFinger.icon}}.png" alt="" />
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-leftFinger">
-                    <a class="slot-link" href="" data-d3tooltip="item/CkEIu_2b1gYSBwgEFTJVXUQddh72DR2Ivr4hHSGHPlYdP0ceDB06RK6bIgsIARV1QgMAGBIgHjAJONUCQABQDmC3Axjk1OrFCFACWAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.leftFinger.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.leftFinger.icon}}.png" alt="" />
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-neck">
-                    <a class="slot-link" href="" data-d3tooltip="item/CkYIlsb_5w4SBwgEFazFRGQdDmt__R1v_EXEHWdZF7UdmLorUh228ewaHZ5ssxQiCwgBFYFCAwAYEiAaMAk4jAJAAFAMYN4CGNiWpsQMUAJYAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.neck.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.neck.icon}}.png" alt="" />
-                        </span>
-                    </a>
-
-                </li>
             </ul>
 
 
@@ -298,10 +93,10 @@
                     <a href="" data-d3tooltip="{{items[slot + 'Details'].tooltipParams}}" class="label-link d3-color-{{items[slot + 'Details'].displayColor}}">
                         <span class="item-name">{{items[slot + 'Details'].name}}</span>
                         <span class="weapon-dps">
-                            
+
                             <span class="value">{{items[slot + 'Details'].dps.max | number:1}}</span>
-                                <span data-ng-if="items[slot + 'Details'].dps.max | number:1">DPS</span>
-                            
+                            <span data-ng-if="items[slot + 'Details'].dps.max | number:1">DPS</span>
+
                         </span>
                         <span class="bonus-value bonus-50 long-bonus">
                             <p>
