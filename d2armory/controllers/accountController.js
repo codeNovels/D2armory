@@ -7,8 +7,9 @@ angular
 accountController.$inject = ['$scope', '$http'];
 
 function accountController($scope, $http) {
-    $scope.battleTag = "Talentz-1274";
+    $scope.battleTag = "Billy-1739";
 
+    //ACCOUNT
     var onUserComplete = function (response) {
         $scope.account = response.data;
     };
@@ -17,6 +18,9 @@ function accountController($scope, $http) {
         $scope.heroDetails = heroDetails.data;
     };
 
+
+
+    //ITEMS
     var onHeadComplete = function (headDetails) {
         $scope.headDetails = headDetails.data;   
     };
@@ -71,6 +75,9 @@ function accountController($scope, $http) {
     var onError = function () {
         $scope.error = "No results found."
     };
+
+
+
 
     $scope.search = function (battleTag) {
         $http.get("http://us.battle.net/api/d3/profile/" + battleTag + "/")
@@ -180,7 +187,9 @@ function accountController($scope, $http) {
             $scope.leftFingerItemDetails($scope.heroDetails.items.leftFinger.tooltipParams)
             $scope.neckItemDetails($scope.heroDetails.items.neck.tooltipParams)
         }
-    });
+        }
+
+     
+ )};
 
    
-}
