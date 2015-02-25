@@ -51,7 +51,7 @@
 
 
 
-
+        <!--ITEM IMAGES-->
         <h2 class="class">
             <a href="">
                 <span><strong>{{heroDetails.level}}<span class="paragon-level">({{heroDetails.paragonLevel}})</span></strong> {{heroDetails.class}}</span>
@@ -76,16 +76,16 @@
                         </span>
                         <span class="sockets-wrapper">
                             <span class="sockets-align">
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/amethyst_14_demonhunter_male.png" />
-                                </span><br />
+                                <div ng-repeat="gems in items[slot + 'Details'].gems">
+                                    <span class="socket">
+                                        <!--<img class="gem" ng-if="gem" src="http://media.blizzard.com/d3/icons/items/small/{{items[slot + 'Details'].gems[0].item.icon}}.png" />{{items[slot + 'Details'].attributesRaw[7].Sockets.min}}-->
+                                        <img class="gem" /><br />
+                                    </span><br />
+                                </div>
                             </span>
                         </span>
                     </a>
             </ul>
-
-
-
 
             <!--ITEM DETAILS-->
             <ul class="gear-labels" id="gear-labels" data-ng-repeat="slot in slots">
@@ -112,13 +112,6 @@
                 <li data-ng-if="heroDetails.items[slot]" class="slot-{{slot}}"></li>
             </ul>
         </div>
-
-
-
-
-
-
-
 
         <!--STAT ATTRIBUTES-->
         <div class="gear-bonuses" id="bonuses">
@@ -171,11 +164,11 @@
 
 
 
-<!--audio-->
+    <!--audio-->
     <!--<audio controls autoplay style="visibility: hidden;">
         <source src="sound/bg-music.mp3" type="audio/mpeg" />
     </audio>-->
 
-<div></div>
+    <div></div>
 </body>
 </html>
