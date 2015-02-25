@@ -76,10 +76,9 @@
                         </span>
                         <span class="sockets-wrapper">
                             <span class="sockets-align">
-                                <div ng-repeat="gems in items[slot + 'Details'].gems">
+                                <div ng-repeat="gem in items[slot + 'Details'].gems">
                                     <span class="socket">
-                                        <!--<img class="gem" ng-if="gem" src="http://media.blizzard.com/d3/icons/items/small/{{items[slot + 'Details'].gems[0].item.icon}}.png" />{{items[slot + 'Details'].attributesRaw[7].Sockets.min}}-->
-                                        <img class="gem" /><br />
+                                        <img class="gem" ng-if="gem.isGem" ng-src="http://media.blizzard.com/d3/icons/items/small/{{gem.item.icon}}.png">
                                     </span><br />
                                 </div>
                             </span>
