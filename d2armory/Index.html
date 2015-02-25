@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="/stylesheets/d3.css" />
     <link rel="stylesheet" href="/stylesheets/hero-slots.css" />
     <link rel="stylesheet" href="/stylesheets/hero.css" />
-    <link rel="stylesheet" href="/stylesheets/rating.css" />
+    <link rel="stylesheet" href="/stylesheets/ratings.css" />
     <link rel="stylesheet" href="/stylesheets/shared.css" />
     <link rel="stylesheet" href="/stylesheets/tooltips.css" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+
 
     <!-- SPELLS -->
     <!-- load angular and angular route via CDN -->
@@ -25,501 +26,168 @@
     <title>d2armory</title>
 </head>
 
-<body ng-controller="accountController" class="profile-sheet">
-    <div xmlns="http://www.w3.org/1999/xhtml" class="profile-sheet" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/paperdoll/{{heroDetails.class}}-{{heroDetails.gender | gender}}.jpg')">
-
-        <!--Calling the Blizzard API-->
-        <form class="container-fluid" ng-submit="search(battleTag)">
-            <div class="row-fluid ">
-                <div class="col-xs-4">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="BattleTag#             example: 'Billy-1739'" ng-model="battleTag" />
-                        <span class="input-group-btn">
-                            <input type="submit" class="btn btn-primary" value="search" />
-                        </span>
-                    </div>
-                    <div ng-repeat="hero in account.heroes">
-                        <a>
-                            <div ng-click="getDetails(battleTag, hero.id)">
-                                {{hero.name}} {{hero.class}} {{hero.level}} {{hero.id}}
-                            </div>
-                        </a>
-                    </div>
+<body ng-controller="accountController">
+    <!--Calling the Blizzard API-->
+    <form ng-submit="search(battleTag)">
+        <div class="row-fluid " style="padding-top: 15px;">
+            <div class=".col-xs-10 .col-xs-offset-2">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="BattleTag#             example: 'Billy-1739'" ng-model="battleTag" />
+                    <span class="input-group-btn">
+                        <input type="submit" class="btn btn-primary" value="search" />
+                    </span>
                 </div>
             </div>
-        </form>
-
-
-
-
-        <h2 class="class">
-            <a href="">
-                <span><strong>{{heroDetails.level}}<span class="paragon-level">({{heroDetails.paragonLevel}})</span></strong> {{heroDetails.class}}</span>
-            </a>
-        </h2>
-
-        <h2 class="header-2 name">{{heroDetails.name}}</h2>
-
-        <div class="paperdoll" id="paperdoll">
-            <div class="weapon-flourish off-hand-flourish elemental-holy"></div>
-            <ul class="gear-slots">
-                <li class="slot-head">
-                    <a class="slot-link" href="" data-d3tooltip="item/Cl8ImqPk0QQSBwgEFYdTxZEd3Ubxtx2H9XtuHXYe9g0d1maKlB3SXcJLHYYCY-owCTj0AUAAUBJgvgJqJAoMCAAQ9aS5h4OAgOAQEhQIABIHCAQVE5_YqzAJOABAAZABABjxsdXjDVACWACgAfGx1eMNoAHokMvhA6ABosHHvg0">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.head.displayColor}}">
-                            
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.head.icon}}.png" alt="" />
-                        </span>
-                        <span class="sockets-wrapper">
-                            <span class="sockets-align">
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/amethyst_14_demonhunter_male.png" />
-                                </span><br />
-                            </span>
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-torso">
-                    <a class="slot-link" href="" data-d3tooltip="item/CrcBCJuSudcDEgcIBBU0ZBkeHbnx7Bod3iVSyx0o_n0BHZMCY-odiL6-IR1bToDJMAk4sQJAAFASYIsDaigKDAgAEKjpy-iEgICACRIYCP7ihc0DEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEL7py-iEgICACRIYCLH__PgGEgcIBBUTn9irMAk4AEABkAEAaigKDAgAENKnmKaEgIDAEhIYCL6s1q4HEgcIBBUTn9irMAk4AEABkAEAGOiQy-EDUAJYAKAB8bHV4w2gAeiQy-EDoAGiwce-DQ">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.head.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.torso.icon}}.png" alt="" />
-                        </span>
-                        <span class="sockets-wrapper">
-                            <span class="sockets-align">
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/amethyst_14_demonhunter_male.png" />
-                                </span><br />
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/amethyst_14_demonhunter_male.png" />
-                                </span><br />
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/amethyst_14_demonhunter_male.png" />
-                                </span><br />
-                            </span>
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-feet">
-                    <a class="slot-link" href="" data-d3tooltip="item/CmMI3a-qmAMSBwgEFehulOgdvpUo_B2tx-VxHTZpS5MdW06AyR2H9XtuHdJdwkswCTi_AkAAUBJgnQNqKAoMCAAQtqnFl4GAgMAHEhgI64OiyQwSBwgEFWb1i18wCTgAQAGQAQAYr8Tc9gJQAlgA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.feet.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.feet.icon}}.png" alt="" />
-                        </span>
-                        <span class="sockets-wrapper">
-                            <span class="sockets-align">
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/ruby_14_demonhunter_male.png" />
-                                </span><br />
-                            </span>
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-hands">
-                    <a class="slot-link" href="" data-d3tooltip="item/CjkI8ZKmkwISBwgEFVHw6GsduNItxh0PXPT8HdZmipQdDmt__R3SXcJLHcJqmxEwCTj9AUAAUBJgyQIYosHHvg1QAlgAoAHxsdXjDaAB6JDL4QOgAaLBx74N">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.hands.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.hands.icon}}.png" alt="" />
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-shoulders">
-                    <a class="slot-link" href="" data-d3tooltip="item/CkgIm86syAwSBwgEFdD4yBUdIuzMuB2gbLMUHeBElDUdslfV7h3eJVLLHcJqmxEiCwgBFYpCAwAYKCAkMAk41wNAAEgBUBBg2wQYoOPH3AJQAlgA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.shoulders.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.shoulders.icon}}.png" alt="" />
-                        </span>
-                    </a>
-                    <a href="/d3/en/item/abyssal-dye" class="item-dye" data-d3tooltip="item/abyssal-dye">
-                        <img src="http://media.blizzard.com/d3/icons/items/small/dye_20_demonhunter_male.png" />
-                    </a>
-
-                </li>
-                <li class="slot-legs">
-                    <a class="slot-link" href="" data-d3tooltip="item/Co0BCNqwjtgIEgcIBBVnIxsNHYi-viEdCupQCB2Xi8MRHXWx7PAd0HHzPB2vU8M2MAk4ugJAAFASYJYDaigKDAgAEIjcwZmBgIDAHxIYCJ-ClbsDEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEOvrpKqHgIDgGRIYCITExfoFEgcIBBUTn9irMAk4AEABkAEAGM6N2dEBUAJYAKABzo3Z0QE">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.legs.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.legs.icon}}.png" alt="" />
-                        </span>
-                        <span class="sockets-wrapper">
-                            <span class="sockets-align">
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/amethyst_14_demonhunter_male.png" />
-                                </span><br />
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/amethyst_14_demonhunter_male.png" />
-                                </span><br />
-                            </span>
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-bracers">
-                    <a class="slot-link" href="" data-d3tooltip="item/CkYIzf3k9AsSBwgEFdYsyssddh72DR0GVAUXHdwSlCwdKRJz4B0NPj-7HV_MtigiCwgBFXZCAwAYHiAAMAk4xAJAAFAMYOEDGNPMrsMGUAJYAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.bracers.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.bracers.icon}}.png" alt="" />
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-mainHand">
-                    <a class="slot-link" href="" data-d3tooltip="item/Cl8IpaXu4A4SBwgEFQhjE3Ad3YbwJh2GAmPqHb7m3bUd1KFb4B2RqGXGHWSRAaMwCTilAkAAUBJg_QJqJAoMCAAQlpPIhoOAgOAQEhQIABIHCAQVHpaumDAJOABAAZABABiQjJuBDlACWAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.mainHand.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.mainHand.icon}}.png" alt="" />
-                        </span>
-                        <span class="sockets-wrapper">
-                            <span class="sockets-align">
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/emerald_14_demonhunter_male.png" />
-                                </span><br />
-                            </span>
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-offHand">
-                    <a class="slot-link" href="" data-d3tooltip="item/CmMIv86wlQUSBwgEFeVyNmMd7TrCNh1nWRe1Hee-mnEd2ZmE2B2gbLMUHRa8a7UwCTjbAUAAUBJgnwJqKAoMCAAQ8_e2voWAgMAoEhgIneiXjA8SBwgEFR6WrpgwDTgAQAGQAQAYysuzswxQAlgAoAHKy7OzDA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.offHand.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.offHand.icon}}.png" alt="" />
-                        </span>
-                        <span class="sockets-wrapper">
-                            <span class="sockets-align">
-                                <span class="socket">
-                                    <img class="gem" src="http://media.blizzard.com/d3/icons/items/small/emerald_14_demonhunter_male.png" />
-                                </span><br />
-                            </span>
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-waist">
-                    <a class="slot-link" href="" data-d3tooltip="item/CjgIyO7h7w0SBwgEFclSipsdn2yzFB0pEnPgHcxse4MddbHs8B16JH9KHQ-QCvwwCTgOQABQEmCEAhjttK3HDFACWAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.waist.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.waist.icon}}.png" alt="" />
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-rightFinger">
-                    <a class="slot-link" href="" data-d3tooltip="item/CkAI1uPbKBIHCAQVNFVdRB12HvYNHdbxGnIdxZ6okR1DfhQbHZi6K1IiCwgBFWxCAwAYFiAMMAk4rAJAAFAOYIYDGOjU6sUIUAJYAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.rightFinger.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.rightFinger.icon}}.png" alt="" />
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-leftFinger">
-                    <a class="slot-link" href="" data-d3tooltip="item/CkEIu_2b1gYSBwgEFTJVXUQddh72DR2Ivr4hHSGHPlYdP0ceDB06RK6bIgsIARV1QgMAGBIgHjAJONUCQABQDmC3Axjk1OrFCFACWAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.leftFinger.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.leftFinger.icon}}.png" alt="" />
-                        </span>
-                    </a>
-
-                </li>
-                <li class="slot-neck">
-                    <a class="slot-link" href="" data-d3tooltip="item/CkYIlsb_5w4SBwgEFazFRGQdDmt__R1v_EXEHWdZF7UdmLorUh228ewaHZ5ssxQiCwgBFYFCAwAYEiAaMAk4jAJAAFAMYN4CGNiWpsQMUAJYAA">
-                        <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.neck.displayColor}}">
-                            <span class="icon-item-gradient">
-                                <span class="icon-item-inner"></span>
-                            </span>
-                        </span>
-                        <span class="image">
-                            <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items.neck.icon}}.png" alt="" />
-                        </span>
-                    </a>
-
-                </li>
-            </ul>
-            <ul class="gear-labels" id="gear-labels">
-
-                <li class="gear-label slot-head">
-                    <a href="" data-d3tooltip="item/Cl8ImqPk0QQSBwgEFYdTxZEd3Ubxtx2H9XtuHXYe9g0d1maKlB3SXcJLHYYCY-owCTj0AUAAUBJgvgJqJAoMCAAQ9aS5h4OAgOAQEhQIABIHCAQVE5_YqzAJOABAAZABABjxsdXjDVACWACgAfGx1eMNoAHokMvhA6ABosHHvg0" class="label-link d3-color-{{heroDetails.items.head.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.head.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{headDetails.attributes.primary[0].text | split:'first'}}</span> {{headDetails.attributes.primary[0].text | split:'second'}}</p></span>
-                        <span class="bonus-value bonus-51 long-bonus" style="display:none"><p><span class="value">+38</span> Dexterity</p></span>
-                        <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+46</span> Vitality</p></span>
-                        <span class="bonus-value bonus-59 long-bonus" style="display:none"><p><span class="value">+29</span><span class="value">%</span> Life</p></span>
-                        <span class="bonus-value bonus-67 long-bonus" style="display:none"><p>Critical Hit Chance Increased by <span class="value">5.0</span><span class="value">%</span></p></span>
-                        <span class="bonus-value bonus-135 long-bonus" style="display:none"><p>Reduces damage from melee attacks by <span class="value">5.0</span><span class="value">%</span></p></span>
-                    </a>
-                </li>
-
-                <li class="gear-label slot-torso">
-                    <a href="" data-d3tooltip="item/CrcBCJuSudcDEgcIBBU0ZBkeHbnx7Bod3iVSyx0o_n0BHZMCY-odiL6-IR1bToDJMAk4sQJAAFASYIsDaigKDAgAEKjpy-iEgICACRIYCP7ihc0DEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEL7py-iEgICACRIYCLH__PgGEgcIBBUTn9irMAk4AEABkAEAaigKDAgAENKnmKaEgIDAEhIYCL6s1q4HEgcIBBUTn9irMAk4AEABkAEAGOiQy-EDUAJYAKAB8bHV4w2gAeiQy-EDoAGiwce-DQ" class="label-link d3-color-{{heroDetails.items.torso.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.torso.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{torsoDetails.attributes.primary[0].text | split:'first'}}</span> {{torsoDetails.attributes.primary[0].text | split:'second'}}</p></span>
-                        <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+392</span> Vitality</p></span>
-                        <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">72</span> Resistance to All Elements</p></span>
-                        <span class="bonus-value bonus-60 long-bonus" style="display:none"><p><span class="value">+262</span> Armor</p></span>
-                    </a>
-                </li>
-
-                <li class="gear-label slot-feet">
-                    <a href="" data-d3tooltip="item/CmMI3a-qmAMSBwgEFehulOgdvpUo_B2tx-VxHTZpS5MdW06AyR2H9XtuHdJdwkswCTi_AkAAUBJgnQNqKAoMCAAQtqnFl4GAgMAHEhgI64OiyQwSBwgEFWb1i18wCTgAQAGQAQAYr8Tc9gJQAlgA" class="label-link d3-color-{{heroDetails.items.feet.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.feet.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{feetDetails.attributes.primary[0].text | split:'first'}}</span> {{feetDetails.attributes.primary[0].text | split:'second'}}</p></span>
-                        <span class="bonus-value bonus-52 long-bonus" style="display:none"><p><span class="value">+90</span> Intelligence</p></span>
-                        <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">72</span> Resistance to All Elements</p></span>
-                        <span class="bonus-value bonus-59 long-bonus" style="display:none"><p><span class="value">+12</span><span class="value">%</span> Life</p></span>
-                        <span class="bonus-value bonus-66 long-bonus" style="display:none"><p>Regenerates <span class="value">84</span> Life per Second</p></span>
-                        <span class="bonus-value bonus-77 long-bonus" style="display:none"><p>Reduces damage from Cold attacks by <span class="value">8</span><span class="value">%</span>.</p></span>
-                        <span class="bonus-value bonus-153 long-bonus" style="display:none"><p><span class="value">+18</span><span class="value">%</span> Extra Gold from Monsters</p></span>
-                    </a>
-                </li>
-
-                <li class="gear-label slot-hands">
-                    <a href="" data-d3tooltip="item/CjkI8ZKmkwISBwgEFVHw6GsduNItxh0PXPT8HdZmipQdDmt__R3SXcJLHcJqmxEwCTj9AUAAUBJgyQIYosHHvg1QAlgAoAHxsdXjDaAB6JDL4QOgAaLBx74N" class="label-link d3-color-{{heroDetails.items.hands.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.hands.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{handsDetails.attributes.primary[0].text | split:'first'}}</span> {{handsDetails.attributes.primary[0].text | split:'second'}}</p></span>
-                        <span class="bonus-value bonus-52 long-bonus" style="display:none"><p><span class="value">+113</span> Intelligence</p></span>
-                        <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">33.0</span><span class="value">%</span> </p></span>
-                        <span class="bonus-value bonus-66 long-bonus" style="display:none"><p>Regenerates <span class="value">279</span> Life per Second</p></span>
-                        <span class="bonus-value bonus-67 long-bonus" style="display:none"><p>Critical Hit Chance Increased by <span class="value">9.5</span><span class="value">%</span></p></span>
-                        <span class="bonus-value bonus-135 long-bonus" style="display:none"><p>Reduces damage from melee attacks by <span class="value">6.0</span><span class="value">%</span></p></span>
-                    </a>
-                </li>
-
-                <li class="gear-label slot-shoulders">
-                    <a href="/d3/en/item/archon-spaulders" data-d3tooltip="item/CkgIm86syAwSBwgEFdD4yBUdIuzMuB2gbLMUHeBElDUdslfV7h3eJVLLHcJqmxEiCwgBFYpCAwAYKCAkMAk41wNAAEgBUBBg2wQYoOPH3AJQAlgA" class="label-link d3-color-{{heroDetails.items.shoulders.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.shoulders.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{shouldersDetails.attributes.primary[0].text | split:'first'}}</span> {{shouldersDetails.attributes.primary[0].text | split:'second'}}</p></span>
-                        <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+133</span> Vitality</p></span>
-                        <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">68</span> Resistance to All Elements</p></span>
-                        <span class="bonus-value bonus-66 long-bonus" style="display:none"><p>Regenerates <span class="value">240</span> Life per Second</p></span>
-                        <span class="bonus-value bonus-203 long-bonus" style="display:none"><p>Ranged and melee attackers take <span class="value">384</span> damage per hit</p></span>
-                    </a>
-                </li>
-
-                <li class="gear-label slot-legs">
-                    <a href="" data-d3tooltip="item/Co0BCNqwjtgIEgcIBBVnIxsNHYi-viEdCupQCB2Xi8MRHXWx7PAd0HHzPB2vU8M2MAk4ugJAAFASYJYDaigKDAgAEIjcwZmBgIDAHxIYCJ-ClbsDEgcIBBUTn9irMAk4AEABkAEAaigKDAgAEOvrpKqHgIDgGRIYCITExfoFEgcIBBUTn9irMAk4AEABkAEAGM6N2dEBUAJYAKABzo3Z0QE" class="label-link d3-color-{{heroDetails.items.legs.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.legs.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{legsDetails.attributes.primary[0].text | split:'first'}}</span> {{legsDetails.attributes.primary[0].text | split:'second'}}</p></span>
-                        <span class="bonus-value bonus-51 long-bonus" style="display:none"><p><span class="value">+98</span> Dexterity</p></span>
-                        <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+116</span> Vitality</p></span>
-                        <span class="bonus-value bonus-57 long-bonus" style="display:none"><p>Attack Speed Increased by <span class="value">9.0</span><span class="value">%</span></p></span>
-                        <span class="bonus-value bonus-67 long-bonus" style="display:none"><p>Critical Hit Chance Increased by <span class="value">1.0</span><span class="value">%</span></p></span>
-                        <span class="bonus-value bonus-126 long-bonus" style="display:none"><p><span class="value">+12</span><span class="value">%</span> Movement Speed</p></span>
-                    </a>
-                </li>
-
-                <li class="gear-label slot-bracers">
-                    <a href="/d3/en/item/warbands" data-d3tooltip="item/CkYIzf3k9AsSBwgEFdYsyssddh72DR0GVAUXHdwSlCwdKRJz4B0NPj-7HV_MtigiCwgBFXZCAwAYHiAAMAk4xAJAAFAMYOEDGNPMrsMGUAJYAA" class="label-link d3-color-{{heroDetails.items.bracers.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.bracers.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{bracersDetails.attributes.primary[0].text | split:'first'}}</span> {{bracersDetails.attributes.primary[0].text | split:'second'}}</p></span>
-                        <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+130</span> Vitality</p></span>
-                        <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">53</span> Resistance to All Elements</p></span>
-                        <span class="bonus-value bonus-67 long-bonus" style="display:none"><p>Critical Hit Chance Increased by <span class="value">5.5</span><span class="value">%</span></p></span>
-                        <span class="bonus-value bonus-153 long-bonus" style="display:none"><p><span class="value">+13</span><span class="value">%</span> Extra Gold from Monsters</p></span>
-                    </a>
-                </li>
-
-                <li class="gear-label slot-mainHand">
-                    <a href="" data-d3tooltip="item/Cl8IpaXu4A4SBwgEFQhjE3Ad3YbwJh2GAmPqHb7m3bUd1KFb4B2RqGXGHWSRAaMwCTilAkAAUBJg_QJqJAoMCAAQlpPIhoOAgOAQEhQIABIHCAQVHpaumDAJOABAAZABABiQjJuBDlACWAA" class="label-link d3-color-{{heroDetails.items.mainHand.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.mainHand.name}}</span>
-                        <span class="weapon-dps">
-                            <span class="value">{{mainHandDetails.dps.max | number:1}}</span> DPS
-                        </span>
-                        <span class="bonus-value bonus-0 long-bonus" style="display:none"><p><span class="value">+278</span> Minimum Damage</p></span>
-                        <span class="bonus-value bonus-1 long-bonus" style="display:none"><p><span class="value">+317</span> Maximum Damage</p></span>
-                        <span class="bonus-value bonus-40 long-bonus" style="display:none"><p><span class="value">+39</span><span class="value">%</span> Damage</p></span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{mainHandDetails.attributes.primary[0].text | split:'first'}}</span> {{mainHandDetails.attributes.primary[0].text | split:'second'}} {{mainHandDetails.attributes.primary[0].text | split:'third'}}</p></span>
-                        <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+77</span> Vitality</p></span>
-                        <span class="bonus-value bonus-55 long-bonus" style="display:none"><p><span class="value">+0.23</span> Attacks per Second</p></span>
-                        <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">100.0</span><span class="value">%</span> </p></span>
-                        <span class="bonus-value bonus-264 long-bonus" style="display:none"><p><span class="value">17.6</span><span class="value">%</span> Chance to Fear on Hit</p></span>
-                    </a>
-                </li>
-
-                <li class="gear-label slot-offHand">
-                    <a href="/d3/en/item/bulkathoss-warrior-blood-1OE7NH" data-d3tooltip="item/CmMIv86wlQUSBwgEFeVyNmMd7TrCNh1nWRe1Hee-mnEd2ZmE2B2gbLMUHRa8a7UwCTjbAUAAUBJgnwJqKAoMCAAQ8_e2voWAgMAoEhgIneiXjA8SBwgEFR6WrpgwDTgAQAGQAQAYysuzswxQAlgAoAHKy7OzDA" class="label-link d3-color-{{heroDetails.items.offHand.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.offHand.name}}</span>
-                        <span class="weapon-dps">
-                            <span class="value">{{offHandDetails.dps.max | number:1}}</span> DPS
-                        </span>
-                        <span class="bonus-value bonus-13 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">276</span>–<span class="value">534</span> Holy Damage</p></span>
-                        <span class="bonus-value bonus-40 long-bonus" style="display:none"><p><span class="value">+49</span><span class="value">%</span> Damage</p></span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{offHandDetails.attributes.primary[0].text | split:'first'}}</span> {{offHandDetails.attributes.primary[0].text | split:'second'}} {{offHandDetails.attributes.primary[0].text | split:'third'}}</p></span>
-                        <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">187.0</span><span class="value">%</span> </p></span>
-                        <span class="bonus-value bonus-75 long-bonus" style="display:none"><p>Increases damage against elites by <span class="value">5.0</span><span class="value">%</span></p></span>
-                    </a>
-                </li>
-
-                <li class="gear-label slot-waist">
-                    <a href="" data-d3tooltip="item/CjgIyO7h7w0SBwgEFclSipsdn2yzFB0pEnPgHcxse4MddbHs8B16JH9KHQ-QCvwwCTgOQABQEmCEAhjttK3HDFACWAA" class="label-link d3-color-{{heroDetails.items.waist.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.waist.name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{waistDetails.attributes.primary[0].text | split:'first'}}</span> {{waistDetails.attributes.primary[0].text | split:'second'}}</p></span>
-                        <span class="bonus-value bonus-52 long-bonus" style="display:none"><p><span class="value">+99</span> Intelligence</p></span>
-                        <span class="bonus-value bonus-54 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">56</span> Resistance to All Elements</p></span>
-                        <span class="bonus-value bonus-57 long-bonus" style="display:none"><p>Attack Speed Increased by <span class="value">8.0</span><span class="value">%</span></p></span>
-                        <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">50.0</span><span class="value">%</span> </p></span>
-                        <span class="bonus-value bonus-131 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">44</span> Arcane Resistance</p></span>
-                    </a>
-                </li>
-
-                <li class="gear-label slot-rightFinger">
-                    <a href="/d3/en/item/ring-1fCyBm" data-d3tooltip="item/CkAI1uPbKBIHCAQVNFVdRB12HvYNHdbxGnIdxZ6okR1DfhQbHZi6K1IiCwgBFWxCAwAYFiAMMAk4rAJAAFAOYIYDGOjU6sUIUAJYAA" class="label-link d3-color-{{heroDetails.items.rightFinger.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.rightFinger.name}}</span>
-                        <span class="bonus-value bonus-7 long-bonus" style="display:none"><p><span class="value"></span> </p></span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{rightFingerDetails.attributes.primary[0].text | split:'first'}}</span> {{rightFingerDetails.attributes.primary[0].text | split:'second'}}</p></span>
-                        <span class="bonus-value bonus-51 long-bonus" style="display:none"><p><span class="value">+88</span> Dexterity</p></span>
-                        <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">24.0</span><span class="value">%</span> </p></span>
-                        <span class="bonus-value bonus-67 long-bonus" style="display:none"><p>Critical Hit Chance Increased by <span class="value">6.0</span><span class="value">%</span></p></span>
-                    </a>
-                </li>
-
-                <li class="gear-label slot-leftFinger">
-                    <a href="" data-d3tooltip="item/CkEIu_2b1gYSBwgEFTJVXUQddh72DR2Ivr4hHSGHPlYdP0ceDB06RK6bIgsIARV1QgMAGBIgHjAJONUCQABQDmC3Axjk1OrFCFACWAA" class="label-link d3-color-{{heroDetails.items.leftFinger.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.leftFinger.name}}</span>
-                        <span class="bonus-value bonus-4 long-bonus" style="display:none"><p><span class="value"></span> </p></span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{leftFingerDetails.attributes.primary[0].text | split:'first'}}</span> {{leftFingerDetails.attributes.primary[0].text | split:'second'}}</p></span>
-                        <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">26.0</span><span class="value">%</span> </p></span>
-                        <span class="bonus-value bonus-67 long-bonus" style="display:none"><p>Critical Hit Chance Increased by <span class="value">5.0</span><span class="value">%</span></p></span>
-                        <span class="bonus-value bonus-129 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">58</span> Fire Resistance</p></span>
-                    </a>
-                </li>
-
-                <li class="gear-label slot-neck">
-                    <a href="" data-d3tooltip="item/CkYIlsb_5w4SBwgEFazFRGQdDmt__R1v_EXEHWdZF7UdmLorUh228ewaHZ5ssxQiCwgBFYFCAwAYEiAaMAk4jAJAAFAMYN4CGNiWpsQMUAJYAA" class="label-link d3-color-{{heroDetails.items.neck.displayColor}}">
-                        <span class="item-name">{{heroDetails.items.neck.name}}</span>
-                        <span class="bonus-value bonus-7 long-bonus" style="display:none"><p><span class="value"></span> </p></span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{neckDetails.attributes.primary[0].text | split:'first'}}</span> {{neckDetails.attributes.primary[0].text | split:'second'}}</p></span>
-                        <span class="bonus-value bonus-53 long-bonus" style="display:none"><p><span class="value">+110</span> Vitality</p></span>
-                        <span class="bonus-value bonus-64 long-bonus" style="display:none"><p>Critical Hit Damage Increased by <span class="value">68.0</span><span class="value">%</span> </p></span>
-                        <span class="bonus-value bonus-67 long-bonus" style="display:none"><p>Critical Hit Chance Increased by <span class="value">10.0</span><span class="value">%</span></p></span>
-                        <span class="bonus-value bonus-130 long-bonus" style="display:none"><p><span class="value">+</span><span class="value">49</span> Lightning Resistance</p></span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="gear-lines">
-                <li class="slot-head"></li>
-                <li class="slot-torso"></li>
-                <li class="slot-feet"></li>
-                <li class="slot-hands"></li>
-                <li class="slot-shoulders"></li>
-                <li class="slot-legs"></li>
-                <li class="slot-bracers"></li>
-                <li class="slot-mainHand"></li>
-                <li class="slot-offHand"></li>
-                <li class="slot-waist"></li>
-                <li class="slot-rightFinger"></li>
-                <li class="slot-leftFinger"></li>
-                <li class="slot-neck"></li>
-            </ul>
         </div>
+    </form>
 
-        <div class="gear-bonuses" id="bonuses">
-
-            <h3 class="header-3"><span class="help-icon tip" data-tooltip="#gear-bonuses-tooltip"></span>Stat Attributes</h3>
-
-            <div id="gear-bonuses-tooltip" style="display: none;">
-                <div class="profile-tooltip">
-
-
-                    <h2 class="subheader-2">Gear Bonuses</h2>
-                    <p>This feature lists your most prevalent gear bonuses. You may select a bonus to see which items provide that bonus.</p>
-                </div>
-            </div>
-            <ul>
-                <li>
-                    <a href="javascript:;" class="bonus-stat" data-bonus-index="50">
-                        <span class="bonus-radio active"></span><p><span class="value">{{heroDetails.stats.life}}</span> Life</p>
+    <!--PROFILE SELECTOR-->
+    <div class="profile-body" id="profile-body">
+        <div class="profile-selector" id="heroes">
+            <ul class="hero-tabs">
+                <li ng-repeat="hero  in account.heroes" ng-click="getDetails(battleTag, hero.id)" >
+                    <a class="hero-tab {{hero.class}}-{{hero.gender | gender}}" href="" data-tooltip="#hero-tab-tooltip-0" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-frames.png')">
+                        <span class="hero-portrait" style="background-image:url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-portraits.jpg')">
+                        </span>
+                        <span class="level">{{hero.level}}</span>
+                        <span class="name">{{hero.name}}</span>
                     </a>
-                </li>
-                <li>
-                    <a href="javascript:;" class="bonus-stat" data-bonus-index="54">
-                        <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.damage}}</span> Damage</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;" class="bonus-stat" data-bonus-index="67">
-                        <span class="bonus-radio"></span><p> <span class="value">{{heroDetails.stats.strength}}</span> Strength</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;" class="bonus-stat" data-bonus-index="64">
-                        <span class="bonus-radio"></span><p> <span class="value">{{heroDetails.stats.dexterity}}</span> Dexterity</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;" class="bonus-stat" data-bonus-index="53">
-                        <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.vitality}}</span> Vitality</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;" class="bonus-stat" data-bonus-index="54">
-                        <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.intelligence}}</span> Intelligence</p>
-                    </a>
+                    <div id="hero-tab-tooltip-0" style="display:none">
+                        <div class="hero-tab-tooltip profile-tooltip">
+                            <h2 class="subheader-2">{{hero.name}}</h2>
+                            <p>
+                                <strong>{{hero.level}}</strong> {{hero.class}}
+                            </p>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
-        <span class="clear"><!-- --></span>
     </div>
 
 
+            <div class="profile-sheet" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/paperdoll/{{heroDetails.class}}-{{heroDetails.gender | gender}}.jpg')">
 
-<!--audio-->
-    <!--<audio controls autoplay style="visibility: hidden;">
-        <source src="sound/bg-music.mp3" type="audio/mpeg" />
-    </audio>-->
+                <!--HERO TITLE-->
+                <h2 class="class">
+                    <a href="">
+                        <span><strong>{{heroDetails.level}}<span class="paragon-level" ng-if="heroDetails">({{heroDetails.paragonLevel}})</span></strong> {{heroDetails.class}}</span>
+                    </a>
+                </h2>
+                <h2 class="header-2 name">{{heroDetails.name}}</h2>
 
-<div></div>
+                <!--ITEM IMAGES-->
+                <div class="paperdoll" id="paperdoll">
+                    <div class="weapon-flourish off-hand-flourish elemental-holy"></div>
+                    <ul class="gear-slots">
+                        <li class="slot-{{slot}}" ng-repeat="slot in slots" data-ng-if="heroDetails.items[slot]">
+                            <a class="slot-link" href="" data-d3tooltip="items[slot + 'Details'].tooltipParams">
+                                <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items[slot].displayColor}}">
+
+                                    <span class="icon-item-gradient">
+                                        <span class="icon-item-inner"></span>
+                                    </span>
+                                </span>
+                                <span class="image">
+                                    <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items[slot].icon}}.png" alt="" />
+                                </span>
+
+                                <!--SOCKETS | GEMS-->
+                                <span class="sockets-wrapper">
+                                    <span class="sockets-align">
+                                        <div ng-repeat="gem in items[slot + 'Details'].gems">
+                                            <span class="socket">
+                                                <img class="gem" ng-if="gem.isGem" ng-src="http://media.blizzard.com/d3/icons/items/small/{{gem.item.icon}}.png">
+                                            </span><br />
+                                        </div>
+                                    </span>
+                                </span>
+                            </a>
+                    </ul>
+
+                    <!--ITEM DETAILS-->
+                    <ul class="gear-labels" id="gear-labels" data-ng-repeat="slot in slots">
+                        <li class="gear-label slot-{{slot}}">
+                            <a href="" data-d3tooltip="{{items[slot + 'Details'].tooltipParams}}" class="label-link d3-color-{{items[slot + 'Details'].displayColor}}">
+                                <span class="item-name">{{items[slot + 'Details'].name}}</span>
+                                <span class="weapon-dps">
+
+                                    <span class="value">{{items[slot + 'Details'].dps.max | number:1}}</span>
+                                    <span data-ng-if="items[slot + 'Details'].dps.max | number:1">DPS</span>
+
+                                </span>
+                                <span class="bonus-value bonus-50 long-bonus">
+                                    <p>
+                                        <span class="bonus-value bonus-50 long-bonus">
+                                            {{items[slot + 'Details'].attributes.primary[0].text}}
+                                        </span>
+                                    </p>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!--GEAR LINES-->
+                    <ul class="gear-lines" data-ng-repeat="slot in slots">
+                        <li data-ng-if="heroDetails.items[slot]" class="slot-{{slot}}"></li>
+                    </ul>
+                </div>
+
+                <!--STAT ATTRIBUTES-->
+                <div class="gear-bonuses" id="bonuses" ng-if="heroDetails">
+
+                    <h3 class="header-3"><span class="help-icon tip" data-tooltip="#gear-bonuses-tooltip"></span>Stat Attributes</h3>
+
+                    <div id="gear-bonuses-tooltip" style="display: none;">
+                        <div class="profile-tooltip">
+
+
+                            <h2 class="subheader-2">Gear Bonuses</h2>
+                            <p>This feature lists your most prevalent gear bonuses. You may select a bonus to see which items provide that bonus.</p>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="javascript:;" class="bonus-stat" data-bonus-index="50">
+                                <span class="bonus-radio active"></span><p><span class="value">{{heroDetails.stats.life}}</span> Life</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="bonus-stat" data-bonus-index="54">
+                                <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.damage}}</span> Damage</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="bonus-stat" data-bonus-index="67">
+                                <span class="bonus-radio"></span><p> <span class="value">{{heroDetails.stats.strength}}</span> Strength</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="bonus-stat" data-bonus-index="64">
+                                <span class="bonus-radio"></span><p> <span class="value">{{heroDetails.stats.dexterity}}</span> Dexterity</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="bonus-stat" data-bonus-index="53">
+                                <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.vitality}}</span> Vitality</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="bonus-stat" data-bonus-index="54">
+                                <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.intelligence}}</span> Intelligence</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+
+
+            <!--audio-->
+            <!--<audio controls autoplay style="visibility: hidden;">
+                <source src="sound/bg-music.mp3" type="audio/mpeg" />
+            </audio>-->
 </body>
 </html>
