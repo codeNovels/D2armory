@@ -181,8 +181,8 @@
 .paperdoll .d3-icon-item-green { border-color: #87a73d; }
 
 .paperdoll .gear-lines { width: 332px; height: 418px; position: absolute; top: 14px; left: 197px; z-index: 1; }
-.paperdoll .gear-lines li { position: absolute; background: url("../../images/profile/hero/inventory-lines.png"); }
-.ie6 .paperdoll .gear-lines li { background-image: url("../../images/profile/hero/inventory-lines.gif"); }
+.paperdoll .gear-lines li { position: absolute; background: url(images/inventory-lines.png); }
+.ie6 .paperdoll .gear-lines li { background-image: url(images/inventory-lines.png); }
 .paperdoll .gear-lines .slot-head { width: 134px; height: 1px; top: 0; right: 0; background-position: 100% 0; }
 .paperdoll .gear-lines .slot-waist { width: 124px; height: 12px; top: 196px; right: 0; background-position: 100% -196px; }
 .paperdoll .gear-lines .slot-torso { width: 125px; height: 24px; top: 84px; left: 0; background-position: 0 -84px; }
