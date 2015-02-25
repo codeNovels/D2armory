@@ -298,7 +298,10 @@
                     <a href="" data-d3tooltip="{{items[slot + 'Details'].tooltipParams}}" class="label-link d3-color-{{items[slot + 'Details'].displayColor}}">
                         <span class="item-name">{{items[slot + 'Details'].name}}</span>
                         <span class="weapon-dps">
+                            
                             <span class="value">{{items[slot + 'Details'].dps.max | number:1}}</span>
+                                <span data-ng-if="items[slot + 'Details'].dps.max | number:1">DPS</span>
+                            
                         </span>
                         <span class="bonus-value bonus-50 long-bonus">
                             <p>
