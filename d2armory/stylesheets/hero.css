@@ -1,15 +1,13 @@
-﻿body {
-}
-.profile-body { padding: 1px 0; background: url("../../images/profile/hero/bg-stats.jpg") 50% 0 no-repeat; }
+﻿.profile-body { padding: 1px 0; background: url("../../images/profile/hero/bg-stats.jpg") 50% 0 no-repeat; }
 .profile-lower { padding-top:1px; background: url("../../images/profile/hero/lower-bg.jpg") 50% 0 no-repeat; }
 
 /* selector */
-.profile-selector { padding: 7px 12px 0; }
+.profile-selector {margin-left: -33px }
 
 /* hero tabs */
-.hero-tabs { height:115px; overflow:hidden; }
-.hero-tabs li { width:97px; height:124px; float:left; display:block; }
-.hero-tabs .hero-tab { display:block; width:83px; height:117px; padding:7px 7px 0; background:url(../../images/profile/hero/hero-nav-frames.png) 0 -124px no-repeat; }
+.hero-tabs { height:115px; overflow:hidden}
+.hero-tabs li { width:96px; height:124px; float:left; display:block; }
+.hero-tabs .hero-tab { display:block; width:100px; height:117px; padding:7px 7px 0; background:url(../../images/profile/hero/hero-nav-frames.png) 0 -124px no-repeat; }
 .hero-tabs .hero-tab.loading:after { content:" "; display:block; width:83px; height:66px; background:rgba(0, 0, 0, .2) url(../../images/loaders/default.gif) 50% 50% no-repeat; position:relative; top:-67px; left:0; }
 .hero-tabs .hero-tab.empty-hero { background-position: 2px -378px; }
 .ie6 .hero-tab { background-image:url(../../images/profile/hero/hero-nav-frames.gif); }
@@ -38,7 +36,7 @@
 .hero-tabs .wizard-male .hero-portrait { background-position:0 -264px; }
 .hero-tabs .wizard-female .hero-portrait { background-position:-83px -264px; }
 .hero-tabs .level { display:block; padding-left:5px; width:16px; height:25px; line-height:25px; float:left; color:#a99877; font-size:12px; }
-.hero-tabs .name { display:block; float:left; width:60px; height:25px; line-height:25px; font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.hero-tabs .name { display:block; float:right; width:60px; height:25px; line-height:25px; font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .hero-tabs .active .name,
 .hero-tabs .hardcore-active .name { color:#F3E6D0; font-weight:bold; }
 .zh-tw .hero-tabs .active .name,
@@ -52,7 +50,7 @@
 
 
 /* sheet */
-.profile-sheet { height: 645px; position: relative; text-shadow: 1px 1px 0 #000; background-position: 50% 0; background-repeat: no-repeat; }
+.profile-sheet { height: 645px; position: relative; text-shadow: 1px 1px 0 #000; background-position: 50% 0; background-repeat: no-repeat; margin-top: -40px; }
 .profile-sheet .name,
 .profile-sheet .class { width: 700px; position: absolute; top: 69px; right: 15px; text-align: center; line-height: 100%; text-shadow:none; }
 .zh-tw.ie9 .profile-sheet .name,
@@ -183,8 +181,8 @@
 .paperdoll .d3-icon-item-green { border-color: #87a73d; }
 
 .paperdoll .gear-lines { width: 332px; height: 418px; position: absolute; top: 14px; left: 197px; z-index: 1; }
-.paperdoll .gear-lines li { position: absolute; background: url("/images/inventory-lines.png"); }
-.ie6 .paperdoll .gear-lines li { background-image: url("/images/inventory-lines.png"); }
+.paperdoll .gear-lines li { position: absolute; background: url("../../images/profile/hero/inventory-lines.png"); }
+.ie6 .paperdoll .gear-lines li { background-image: url("../../images/profile/hero/inventory-lines.gif"); }
 .paperdoll .gear-lines .slot-head { width: 134px; height: 1px; top: 0; right: 0; background-position: 100% 0; }
 .paperdoll .gear-lines .slot-waist { width: 124px; height: 12px; top: 196px; right: 0; background-position: 100% -196px; }
 .paperdoll .gear-lines .slot-torso { width: 125px; height: 24px; top: 84px; left: 0; background-position: 0 -84px; }
