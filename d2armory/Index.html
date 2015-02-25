@@ -66,7 +66,7 @@
                 <li class="slot-head">
                     <a class="slot-link" href="" data-d3tooltip="item/Cl8ImqPk0QQSBwgEFYdTxZEd3Ubxtx2H9XtuHXYe9g0d1maKlB3SXcJLHYYCY-owCTj0AUAAUBJgvgJqJAoMCAAQ9aS5h4OAgOAQEhQIABIHCAQVE5_YqzAJOABAAZABABjxsdXjDVACWACgAfGx1eMNoAHokMvhA6ABosHHvg0">
                         <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items.head.displayColor}}">
-                            
+
                             <span class="icon-item-gradient">
                                 <span class="icon-item-inner"></span>
                             </span>
@@ -288,11 +288,25 @@
 
                 </li>
             </ul>
+
+
+
+
+            <!--ITEM DETAILS-->
             <ul class="gear-labels" id="gear-labels" data-ng-repeat="slot in slots">
                 <li class="gear-label slot-{{slot}}">
                     <a href="" data-d3tooltip="{{items[slot + 'Details'].tooltipParams}}" class="label-link d3-color-{{items[slot + 'Details'].displayColor}}">
                         <span class="item-name">{{items[slot + 'Details'].name}}</span>
-                        <span class="bonus-value bonus-50 long-bonus"><p><span class="value">{{items[slot + 'Details'].attributes.primary[0].text | split:'first'}}</span> {{items[slot + 'Details'].attributes.primary[0].text | split:'second'}}</p></span>
+                        <span class="weapon-dps">
+                            <span class="value">{{items[slot + 'Details'].dps.max | number:1}}</span>
+                        </span>
+                        <span class="bonus-value bonus-50 long-bonus">
+                            <p>
+                                <span class="bonus-value bonus-50 long-bonus">
+                                    {{items[slot + 'Details'].attributes.primary[0].text}}
+                                </span>
+                            </p>
+                        </span>
                     </a>
                 </li>
             </ul>
@@ -301,6 +315,14 @@
             </ul>
         </div>
 
+
+
+
+
+
+
+
+        <!--STAT ATTRIBUTES-->
         <div class="gear-bonuses" id="bonuses">
 
             <h3 class="header-3"><span class="help-icon tip" data-tooltip="#gear-bonuses-tooltip"></span>Stat Attributes</h3>
