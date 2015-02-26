@@ -9,7 +9,5 @@ function genderFilter() {
         } else {
             return "female";
         };
-
     };
-
 };

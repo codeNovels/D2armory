@@ -84,8 +84,10 @@
     <Content Include="images\skill-overlays.png" />
     <Content Include="Index.html" />
     <Content Include="controllers\accountController.js" />
+    <Content Include="scripts\angular.min.js" />
     <Content Include="services\services.js" />
     <Content Include="sound\bg-music.mp3" />
+    <Content Include="sound\generic_hover.mp3" />
     <Content Include="stylesheets\common-game-site.min.css" />
     <Content Include="stylesheets\d3.css" />
     <Content Include="stylesheets\hero-slots.css" />
@@ -100,6 +102,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\d2armory.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -82,7 +82,7 @@
                     <ul class="gear-slots">
                         <li class="slot-{{slot}}" ng-repeat="slot in slots" data-ng-if="heroDetails.items[slot]">
                             <a class="slot-link" href="" data-d3tooltip="items[slot + 'Details'].tooltipParams">
-                                <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items[slot].displayColor}}">
+                                <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items[slot].displayColor}}" style="background-image: url('http://us.battle.net/d3/static/images/item/icon-bgs/{{heroDetails.items[slot].displayColor}}.png')">
 
                                     <span class="icon-item-gradient">
                                         <span class="icon-item-inner"></span>
