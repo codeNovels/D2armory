@@ -44,9 +44,9 @@
     <!--DEFAULT EMPTY PROFILE SELECTOR-->
     <div class="profile-body" id="profile-body" ng-if="!account.heroes">
         <div class="profile-selector" id="heroes">
-            <ul class="hero-tabs float">
-                <li ng-repeat="empty in emptyProfile" class="float-shadow">
-                    <a class="hero-tab" href="" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-frames.png')"></a>
+            <ul class="hero-tabs">
+                <li ng-repeat="empty in emptyProfile">
+                    <div class="hero-tab" href="" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-frames.png')"></div>
                 </li>
             </ul>
         </div>
