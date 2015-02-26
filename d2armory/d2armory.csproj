@@ -78,15 +78,11 @@
   <ItemGroup>
     <Content Include="filters\genderConverter.js" />
     <Content Include="filters\splitFilter.js" />
-    <Content Include="images\diablo_3_reaper_of_souls-wide.jpg" />
-    <Content Include="images\index-background.jpg" />
+    <Content Include="images\1492437.jpg" />
     <Content Include="images\inventory-lines.png" />
     <Content Include="images\skill-overlays.png" />
     <Content Include="Index.html" />
     <Content Include="controllers\accountController.js" />
-    <Content Include="scripts\angular.min.js" />
-    <Content Include="services\services.js" />
-    <Content Include="sound\bg-music.mp3" />
     <Content Include="sound\generic_hover.mp3" />
     <Content Include="stylesheets\common-game-site.min.css" />
     <Content Include="stylesheets\d3.css" />
@@ -96,7 +92,9 @@
     <Content Include="stylesheets\shared.css" />
     <Content Include="stylesheets\style.css" />
     <Content Include="stylesheets\tooltips.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -11,6 +11,8 @@ function accountController($scope, $http, apiUrl) {
     $scope.battleTag = "Talentz-1274";
 
     $scope.slots = ['head', 'torso', 'feet', 'hands', 'shoulders', 'legs', 'bracers', 'mainHand', 'offHand', 'waist', 'rightFinger', 'leftFinger', 'neck'];
+    $scope.emptyProfile = [{ 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, ];
+    
 
     $scope.items = {};
 

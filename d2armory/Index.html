@@ -26,7 +26,7 @@
     <title>d2armory</title>
 </head>
 
-<body ng-controller="accountController">
+<body ng-controller="accountController" style="background-image: url('images/1492437.jpg'); ">
     <!--Calling the Blizzard API-->
     <form ng-submit="search(battleTag)">
         <div class="row-fluid " style="padding-top: 15px;">
@@ -41,13 +41,24 @@
         </div>
     </form>
 
+    <!--DEFAULT EMPTY PROFILE SELECTOR-->
+    <div class="profile-body" id="profile-body" ng-if="!account.heroes">
+        <div class="profile-selector" id="heroes">
+            <ul class="hero-tabs float">
+                <li ng-repeat="empty in emptyProfile" class="float-shadow">
+                    <a class="hero-tab" href="" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-frames.png')"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <!--PROFILE SELECTOR-->
-    <div class="profile-body" id="profile-body">
+    <div class="profile-body" id="profile-body" ng-if="account.heroes">
         <div class="profile-selector" id="heroes">
             <ul class="hero-tabs">
-                <li ng-repeat="hero  in account.heroes" ng-click="getDetails(battleTag, hero.id)" >
+                <li ng-repeat="hero  in account.heroes" ng-click="getDetails(battleTag, hero.id)" class="float-shadow">
                     <a class="hero-tab {{hero.class}}-{{hero.gender | gender}}" href="" data-tooltip="#hero-tab-tooltip-0" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-frames.png')">
-                        <span class="hero-portrait" style="background-image:url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-portraits.jpg')">
+                        <span class="hero-portrait " style="background-image:url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-portraits.jpg')">
                         </span>
                         <span class="level">{{hero.level}}</span>
                         <span class="name">{{hero.name}}</span>
@@ -64,130 +75,129 @@
             </ul>
         </div>
     </div>
+    <div ng-if="!heroDetails" class="profile-sheet" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/paperdoll/barbarian-male.jpg')"></div>
+        <div ng-if="heroDetails" class="profile-sheet" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/paperdoll/{{heroDetails.class}}-{{heroDetails.gender | gender}}.jpg')">
 
+            <!--HERO TITLE-->
+            <h2 class="class">
+                <a href="">
+                    <span><strong>{{heroDetails.level}}<span class="paragon-level" ng-if="heroDetails">({{heroDetails.paragonLevel}})</span></strong> {{heroDetails.class}}</span>
+                </a>
+            </h2>
+            <h2 class="header-2 name">{{heroDetails.name}}</h2>
 
-            <div class="profile-sheet" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/paperdoll/{{heroDetails.class}}-{{heroDetails.gender | gender}}.jpg')">
+            <!--ITEM IMAGES-->
+            <div class="paperdoll" id="paperdoll">
+                <div class="weapon-flourish off-hand-flourish elemental-holy"></div>
+                <ul class="gear-slots">
+                    <li class="slot-{{slot}}" ng-repeat="slot in slots" data-ng-if="heroDetails.items[slot]">
+                        <a class="slot-link" href="" data-d3tooltip="items[slot + 'Details'].tooltipParams">
+                            <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items[slot].displayColor}}" style="background-image: url('http://us.battle.net/d3/static/images/item/icon-bgs/{{heroDetails.items[slot].displayColor}}.png')">
 
-                <!--HERO TITLE-->
-                <h2 class="class">
-                    <a href="">
-                        <span><strong>{{heroDetails.level}}<span class="paragon-level" ng-if="heroDetails">({{heroDetails.paragonLevel}})</span></strong> {{heroDetails.class}}</span>
-                    </a>
-                </h2>
-                <h2 class="header-2 name">{{heroDetails.name}}</h2>
+                                <span class="icon-item-gradient">
+                                    <span class="icon-item-inner"></span>
+                                </span>
+                            </span>
+                            <span class="image">
+                                <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items[slot].icon}}.png" alt="" />
+                            </span>
 
-                <!--ITEM IMAGES-->
-                <div class="paperdoll" id="paperdoll">
-                    <div class="weapon-flourish off-hand-flourish elemental-holy"></div>
-                    <ul class="gear-slots">
-                        <li class="slot-{{slot}}" ng-repeat="slot in slots" data-ng-if="heroDetails.items[slot]">
-                            <a class="slot-link" href="" data-d3tooltip="items[slot + 'Details'].tooltipParams">
-                                <span class="d3-icon d3-icon-item d3-icon-item-{{heroDetails.items[slot].displayColor}}" style="background-image: url('http://us.battle.net/d3/static/images/item/icon-bgs/{{heroDetails.items[slot].displayColor}}.png')">
+                            <!--SOCKETS | GEMS-->
+                            <span class="sockets-wrapper">
+                                <span class="sockets-align">
+                                    <div ng-repeat="gem in items[slot + 'Details'].gems">
+                                        <span class="socket">
+                                            <img class="gem" ng-if="gem.isGem" ng-src="http://media.blizzard.com/d3/icons/items/small/{{gem.item.icon}}.png">
+                                        </span><br />
+                                    </div>
+                                </span>
+                            </span>
+                        </a>
+                </ul>
 
-                                    <span class="icon-item-gradient">
-                                        <span class="icon-item-inner"></span>
+                <!--ITEM DETAILS-->
+                <ul class="gear-labels" id="gear-labels" data-ng-repeat="slot in slots">
+                    <li class="gear-label slot-{{slot}}">
+                        <a href="" data-d3tooltip="{{items[slot + 'Details'].tooltipParams}}" class="label-link d3-color-{{items[slot + 'Details'].displayColor}}">
+                            <span class="item-name">{{items[slot + 'Details'].name}}</span>
+                            <span class="weapon-dps">
+
+                                <span class="value">{{items[slot + 'Details'].dps.max | number:1}}</span>
+                                <span data-ng-if="items[slot + 'Details'].dps.max | number:1">DPS</span>
+
+                            </span>
+                            <span class="bonus-value bonus-50 long-bonus">
+                                <p>
+                                    <span class="bonus-value bonus-50 long-bonus">
+                                        {{items[slot + 'Details'].attributes.primary[0].text}}
                                     </span>
-                                </span>
-                                <span class="image">
-                                    <img ng-src="http://media.blizzard.com/d3/icons/items/large/{{heroDetails.items[slot].icon}}.png" alt="" />
-                                </span>
+                                </p>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
 
-                                <!--SOCKETS | GEMS-->
-                                <span class="sockets-wrapper">
-                                    <span class="sockets-align">
-                                        <div ng-repeat="gem in items[slot + 'Details'].gems">
-                                            <span class="socket">
-                                                <img class="gem" ng-if="gem.isGem" ng-src="http://media.blizzard.com/d3/icons/items/small/{{gem.item.icon}}.png">
-                                            </span><br />
-                                        </div>
-                                    </span>
-                                </span>
-                            </a>
-                    </ul>
+                <!--GEAR LINES-->
+                <ul class="gear-lines" data-ng-repeat="slot in slots">
+                    <li data-ng-if="heroDetails.items[slot]" class="slot-{{slot}}" style="background-image:url('http://us.battle.net/d3/static/images/profile/hero/inventory-lines.png')"></li>
+                </ul>
+            </div>
 
-                    <!--ITEM DETAILS-->
-                    <ul class="gear-labels" id="gear-labels" data-ng-repeat="slot in slots">
-                        <li class="gear-label slot-{{slot}}">
-                            <a href="" data-d3tooltip="{{items[slot + 'Details'].tooltipParams}}" class="label-link d3-color-{{items[slot + 'Details'].displayColor}}">
-                                <span class="item-name">{{items[slot + 'Details'].name}}</span>
-                                <span class="weapon-dps">
+            <!--STAT ATTRIBUTES-->
+            <div class="gear-bonuses" id="bonuses" ng-if="heroDetails">
 
-                                    <span class="value">{{items[slot + 'Details'].dps.max | number:1}}</span>
-                                    <span data-ng-if="items[slot + 'Details'].dps.max | number:1">DPS</span>
+                <h3 class="header-3"><span class="help-icon tip" data-tooltip="#gear-bonuses-tooltip"></span>Stat Attributes</h3>
 
-                                </span>
-                                <span class="bonus-value bonus-50 long-bonus">
-                                    <p>
-                                        <span class="bonus-value bonus-50 long-bonus">
-                                            {{items[slot + 'Details'].attributes.primary[0].text}}
-                                        </span>
-                                    </p>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <!--GEAR LINES-->
-                    <ul class="gear-lines" data-ng-repeat="slot in slots">
-                        <li data-ng-if="heroDetails.items[slot]" class="slot-{{slot}}" style="background-image:url('http://us.battle.net/d3/static/images/profile/hero/inventory-lines.png')"></li>
-                    </ul>
-                </div>
-
-                <!--STAT ATTRIBUTES-->
-                <div class="gear-bonuses" id="bonuses" ng-if="heroDetails">
-
-                    <h3 class="header-3"><span class="help-icon tip" data-tooltip="#gear-bonuses-tooltip"></span>Stat Attributes</h3>
-
-                    <div id="gear-bonuses-tooltip" style="display: none;">
-                        <div class="profile-tooltip">
+                <div id="gear-bonuses-tooltip" style="display: none;">
+                    <div class="profile-tooltip">
 
 
-                            <h2 class="subheader-2">Gear Bonuses</h2>
-                            <p>This feature lists your most prevalent gear bonuses. You may select a bonus to see which items provide that bonus.</p>
-                        </div>
+                        <h2 class="subheader-2">Gear Bonuses</h2>
+                        <p>This feature lists your most prevalent gear bonuses. You may select a bonus to see which items provide that bonus.</p>
                     </div>
-                    <ul>
-                        <li>
-                            <a href="javascript:;" class="bonus-stat" data-bonus-index="50">
-                                <span class="bonus-radio active"></span><p><span class="value">{{heroDetails.stats.life}}</span> Life</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="bonus-stat" data-bonus-index="54">
-                                <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.damage}}</span> Damage</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="bonus-stat" data-bonus-index="67">
-                                <span class="bonus-radio"></span><p> <span class="value">{{heroDetails.stats.strength}}</span> Strength</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="bonus-stat" data-bonus-index="64">
-                                <span class="bonus-radio"></span><p> <span class="value">{{heroDetails.stats.dexterity}}</span> Dexterity</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="bonus-stat" data-bonus-index="53">
-                                <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.vitality}}</span> Vitality</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;" class="bonus-stat" data-bonus-index="54">
-                                <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.intelligence}}</span> Intelligence</p>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
-
-
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="bonus-stat" data-bonus-index="50">
+                            <span class="bonus-radio active"></span><p><span class="value">{{heroDetails.stats.life}}</span> Life</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="bonus-stat" data-bonus-index="54">
+                            <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.damage}}</span> Damage</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="bonus-stat" data-bonus-index="67">
+                            <span class="bonus-radio"></span><p> <span class="value">{{heroDetails.stats.strength}}</span> Strength</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="bonus-stat" data-bonus-index="64">
+                            <span class="bonus-radio"></span><p> <span class="value">{{heroDetails.stats.dexterity}}</span> Dexterity</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="bonus-stat" data-bonus-index="53">
+                            <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.vitality}}</span> Vitality</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="bonus-stat" data-bonus-index="54">
+                            <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.intelligence}}</span> Intelligence</p>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
 
+        </div>
 
-            <!--audio-->
-            <!--<audio controls autoplay style="visibility: hidden;">
-                <source src="sound/bg-music.mp3" type="audio/mpeg" />
-            </audio>-->
+
+
+        <!--audio-->
+        <!--<audio controls autoplay style="visibility: hidden;">
+            <source src="sound/bg-music.mp3" type="audio/mpeg" />
+        </audio>-->
 </body>
 </html>
