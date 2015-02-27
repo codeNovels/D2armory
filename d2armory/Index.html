@@ -24,12 +24,21 @@
     <script src="/filters/genderConverter.js"></script>
     <script src="/heroController.js"></script>
     <title>d2armory</title>
+
+    
+
 </head>
 
-<body ng-controller="accountController" style="background-image: url('images/1492437.jpg'); ">
+
+
+
+<body ng-controller="accountController" style="background-image: url('images/bg_background.jpg'); ">
+
+
+
     <!--Calling the Blizzard API-->
     <form ng-submit="search(battleTag)">
-        <div class="row-fluid " style="padding-top: 15px;">
+        <div class="row-fluid " style="padding-top: 15px; ">
             <div class=".col-xs-10 .col-xs-offset-2">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="BattleTag#             example: 'Billy-1739'" ng-model="battleTag" />
@@ -41,12 +50,14 @@
         </div>
     </form>
 
+
+
     <!--DEFAULT EMPTY PROFILE SELECTOR-->
     <div class="profile-body" id="profile-body" ng-if="!account.heroes">
         <div class="profile-selector" id="heroes">
             <ul class="hero-tabs">
                 <li ng-repeat="empty in emptyProfile">
-                    <div class="hero-tab" href="" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-frames.png')"></div>
+                    <div class="hero-tab stretchRight" href="" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-frames.png')"></div>
                 </li>
             </ul>
         </div>
@@ -57,7 +68,7 @@
         <div class="profile-selector" id="heroes">
             <ul class="hero-tabs">
                 <li ng-repeat="hero  in account.heroes" ng-click="getDetails(battleTag, hero.id)" class="float-shadow">
-                    <a class="hero-tab {{hero.class}}-{{hero.gender | gender}}" href="" data-tooltip="#hero-tab-tooltip-0" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-frames.png')">
+                    <a class="fadeIn hero-tab {{hero.class}}-{{hero.gender | gender}}" href="" data-tooltip="#hero-tab-tooltip-0" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-frames.png')">
                         <span class="hero-portrait " style="background-image:url('http://us.battle.net/d3/static/images/profile/hero/hero-nav-portraits.jpg')">
                         </span>
                         <span class="level">{{hero.level}}</span>
@@ -75,7 +86,7 @@
             </ul>
         </div>
     </div>
-    <div ng-if="!heroDetails" class="profile-sheet" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/paperdoll/barbarian-male.jpg')"></div>
+    <div ng-if="!heroDetails" class="profile-sheet pullUp" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/paperdoll/barbarian-male.jpg')"></div>
         <div ng-if="heroDetails" class="profile-sheet" style="background-image: url('http://us.battle.net/d3/static/images/profile/hero/paperdoll/{{heroDetails.class}}-{{heroDetails.gender | gender}}.jpg')">
 
             <!--HERO TITLE-->

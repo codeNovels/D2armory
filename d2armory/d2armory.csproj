@@ -78,7 +78,7 @@
   <ItemGroup>
     <Content Include="filters\genderConverter.js" />
     <Content Include="filters\splitFilter.js" />
-    <Content Include="images\1492437.jpg" />
+    <Content Include="images\bg_background.jpg" />
     <Content Include="images\inventory-lines.png" />
     <Content Include="images\skill-overlays.png" />
     <Content Include="Index.html" />
