@@ -27,14 +27,14 @@
   transition-property: transform, opacity;
 }
 .float-shadow:hover, .float-shadow:focus, .float-shadow:active {
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
+  -webkit-transform: translateY(-12px);
+  transform: translateY(-12px);
   /* move the element up by 5px */
 }
 .float-shadow:hover:before, .float-shadow:focus:before, .float-shadow:active:before {
   opacity: 1;
-  -webkit-transform: translateY(5px);
-  transform: translateY(5px);
+  -webkit-transform: translateY(12px);
+  transform: translateY(12px);
   /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
 

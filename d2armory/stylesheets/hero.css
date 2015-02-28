@@ -5,7 +5,7 @@
 .profile-selector {margin-left: -33px }
 
 /* hero tabs */
-.hero-tabs { height:115px; overflow:hidden; width:1000px; padding-top:7px;}
+.hero-tabs { height:115px; overflow:hidden; width:1000px; padding-top:13px;}
 .hero-tabs li { width:90.5px; height:124px; float:left; display:block; }
 .hero-tabs .hero-tab { display:block; width:100px; height:117px; padding:7px 7px 0; background:url(../../images/profile/hero/hero-nav-frames.png) 0 -124px no-repeat; }
 .hero-tabs .hero-tab.loading:after { content:" "; display:block; width:83px; height:66px; background:rgba(0, 0, 0, .2) url(../../images/loaders/default.gif) 50% 50% no-repeat; position:relative; top:-67px; left:0; }
@@ -50,7 +50,7 @@
 
 
 /* sheet */
-.profile-sheet { height: 645px; position: relative; text-shadow: 1px 1px 0 #000; background-position: 50% 0; background-repeat: no-repeat; margin-top: -30px; }
+.profile-sheet { height: 645px; position: relative; text-shadow: 1px 1px 0 #000; background-position: 50% 0; background-repeat: no-repeat; margin-top: -25px; }
 .profile-sheet .name,
 .profile-sheet .class { width: 700px; position: absolute; top: 69px; right: 15px; text-align: center; line-height: 100%; text-shadow:none; }
 .zh-tw.ie9 .profile-sheet .name,

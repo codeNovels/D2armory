@@ -8,7 +8,8 @@ angular
 accountController.$inject = ['$scope', '$http', 'apiUrl'];
 
 function accountController($scope, $http, apiUrl) {
-    $scope.battleTag = "Billy-1739";
+    $scope.battleTag = "Talentz-1274";
+    $scope.heroTag = "1507167";
 
     $scope.slots = ['head', 'torso', 'feet', 'hands', 'shoulders', 'legs', 'bracers', 'mainHand', 'offHand', 'waist', 'rightFinger', 'leftFinger', 'neck'];
     $scope.emptyProfile = [{ 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, { 'empty': 1 }, ];
@@ -17,6 +18,12 @@ function accountController($scope, $http, apiUrl) {
     $scope.items = {};
 
     var slotMap = { 'shoulder': 'shoulders', 'chest': 'torso', 'right-finger': 'rightFinger', 'left-finger': 'leftFinger', 'left-hand': 'mainHand', 'right-hand': 'offHand' }; // object that identifies slot discrepancies between hero details and item details
+
+    //SOUNDS
+    //$scope.profileSound = function(sound) {
+
+    //};
+
 
     //ACCOUNT
     var onUserComplete = function (response) {
@@ -35,6 +42,7 @@ function accountController($scope, $http, apiUrl) {
         $http.get("http://us.battle.net/api/d3/profile/" + battleTag + "/")
             .then(onUserComplete, onError);
     };
+
 
     $scope.chooseHero = function (battleTag, heroID) {
         $http.get(apiUrl + "profile/" + battleTag + "/hero/" + heroID)
@@ -77,7 +85,8 @@ function accountController($scope, $http, apiUrl) {
                     $scope.items[slot + "Details"] = '';
                 }
             });
-        }
+        };
     }
  )
 };
+
