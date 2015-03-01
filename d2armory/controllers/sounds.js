@@ -1,4 +1,5 @@
-﻿function PlaySound(soundobj) {
+﻿
+function PlaySound(soundobj) {
     var thissound = document.getElementById(soundobj);
     thissound.play();
 }

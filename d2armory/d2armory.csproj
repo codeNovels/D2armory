@@ -76,6 +76,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="controllers\includeDirectives.js" />
     <Content Include="controllers\sounds.js" />
     <Content Include="filters\genderConverter.js" />
     <Content Include="filters\splitFilter.js" />
@@ -96,6 +97,9 @@
     <Content Include="stylesheets\shared.css" />
     <Content Include="stylesheets\style.css" />
     <Content Include="stylesheets\tooltips.css" />
+    <Content Include="views\hero-Selector.html" />
+    <Content Include="views\profile-Sheet.html" />
+    <Content Include="views\search-Bar.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

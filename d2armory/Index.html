@@ -23,6 +23,7 @@
     <script src="/filters/splitFilter.js"></script>
     <script src="/filters/genderConverter.js"></script>
     <script src="controllers/sounds.js"></script>
+    <script src="controllers/includeDirectives.js"></script>
     <title>d2armory</title>
 
     
@@ -33,7 +34,6 @@
 
 
 <body ng-controller="accountController" style="background-image: url('images/bg_background.jpg');" ng-init="search(battleTag); getDetails(battleTag, heroTag)">
-
 
     <!--Calling the Blizzard API-->
     <form ng-submit="search(battleTag)">
@@ -48,7 +48,6 @@
             </div>
         </div>
     </form>
-
 
     <!--HERO SELECTOR-->
     <div class="profile-body" id="profile-body" ng-if="account.heroes">
@@ -78,7 +77,7 @@
 
         <!--ITEM IMAGES-->
         <div class="paperdoll" id="paperdoll">
-            <div class="weapon-flourish off-hand-flourish elemental-holy"></div>
+            <div class="weapon-flourish off-hand-flourish elemental-holy">{{items[slot + 'Details'].tooltipParams}}</div>
             <ul class="gear-slots">
                 <li class="slot-{{slot}}" ng-repeat="slot in slots" data-ng-if="heroDetails.items[slot]">
                     <a class="slot-link" data-d3tooltip="items[slot + 'Details'].tooltipParams">
@@ -149,47 +148,95 @@
             <ul>
                 <li>
                     <a href="javascript:;" class="bonus-stat" data-bonus-index="50">
-                        <span class="bonus-radio active"></span><p><span class="value">{{heroDetails.stats.life}}</span> Life</p>
+                        <span class="bonus active"></span><p><span class="value">{{heroDetails.stats.life}}</span> Life</p>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;" class="bonus-stat" data-bonus-index="54">
-                        <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.damage}}</span> Damage</p>
+                        <span class="bonus"></span><p><span class="value">{{heroDetails.stats.damage}}</span> Damage</p>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;" class="bonus-stat" data-bonus-index="67">
-                        <span class="bonus-radio"></span><p> <span class="value">{{heroDetails.stats.strength}}</span> Strength</p>
+                        <span class="bonus"></span><p> <span class="value">{{heroDetails.stats.strength}}</span> Strength</p>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;" class="bonus-stat" data-bonus-index="64">
-                        <span class="bonus-radio"></span><p> <span class="value">{{heroDetails.stats.dexterity}}</span> Dexterity</p>
+                        <span class="bonus"></span><p> <span class="value">{{heroDetails.stats.dexterity}}</span> Dexterity</p>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;" class="bonus-stat" data-bonus-index="53">
-                        <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.vitality}}</span> Vitality</p>
+                        <span class="bonus"></span><p><span class="value">{{heroDetails.stats.vitality}}</span> Vitality</p>
                     </a>
                 </li>
                 <li>
                     <a href="javascript:;" class="bonus-stat" data-bonus-index="54">
-                        <span class="bonus-radio"></span><p><span class="value">{{heroDetails.stats.intelligence}}</span> Intelligence</p>
+                        <span class="bonus"></span><p><span class="value">{{heroDetails.stats.intelligence}}</span> Intelligence</p>
                     </a>
                 </li>
             </ul>
         </div>
+    </div>
 
 
+    <!--ITEM HOVER TOOLTIPS-->
+    <div class="ui-tooltip topRight ui-tooltip-d3" style="display: block; left: 905.5px; top: 710px;" ng-if="false">
+        <div class="tooltip-content">
+            <div class="d3-tooltip d3-tooltip-item">
+                <div class="tooltip-head tooltip-head-yellow">
+                    <h3 class="d3-color-yellow">Faith Trial</h3>
+                </div>
+                <div class="tooltip-body ">
+                    <span class="d3-icon d3-icon-item d3-icon-item-large  d3-icon-item-yellow">
+                        <span class="icon-item-gradient">
+                            <span class="icon-item-inner icon-item-square" style="background-image: url(http://media.blizzard.com/d3/icons/items/large/ring_21_demonhunter_male.png);">
+                            </span>
+                        </span>
+                    </span>
+                    <div class="d3-item-properties">
+                        <ul class="item-type-right">
+                            <li class="item-slot">Finger</li>
+                        </ul>
+                        <ul class="item-type">
+                            <li>
+                                <span class="d3-color-yellow">Rare Ring</span>
+                            </li>
+                        </ul>
+                        <div class="item-before-effects"></div>
+                        <ul class="item-effects">
+                            <p class="item-property-category">Primary</p>
+                            <li class="d3-color-blue d3-item-property-default"><p><span class="value">+</span><span class="value">30</span>–<span class="value">66</span> Damage</p></li>
+                            <li class="d3-color-blue d3-item-property-default"><p><span class="value">+100</span> Strength</p></li>
+                            <li class="d3-color-blue d3-item-property-default"><p>Critical Hit Damage Increased by <span class="value">26.0</span><span class="value">%</span> </p></li>
+                            <li class="d3-color-blue d3-item-property-default"><p>Critical Hit Chance Increased by <span class="value">5.0</span><span class="value">%</span></p></li>
+                            <p class="item-property-category">Secondary</p>
+                            <li class="d3-color-blue d3-item-property-default"><p><span class="value">+</span><span class="value">58</span> Fire Resistance</p></li>
+                        </ul>
+                        <ul class="item-extras">
+                            <li class="item-reqlevel"><span class="d3-color-gold">Required Level: </span><span class="value">60</span></li>
+                        </ul>
+                        <span class="clear"><!-- --></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
 
+
+
+
+
+
+
     <!--audio-->
-    <audio autoplay src="sound/bg_music2.mp3" />
-    <audio id='mySound' src='sound/onHover.mp3' />
-    <audio id='profilePage' src='' />
+    <audio autoplay loop src="sound/bg_music2.mp3"></audio>
+    <audio id='mySound' src='sound/onHover.mp3'></audio>
+    <audio id='profilePage' src=''></audio>
 
 
-</body>
+    </body>
 </html>

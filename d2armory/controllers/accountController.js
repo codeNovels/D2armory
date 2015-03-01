@@ -1,4 +1,4 @@
-﻿var app = angular.module("d2armory", []);
+﻿var app = angular.module("d2armory", ['includeDirectives']);
 
 angular
     .module("d2armory")

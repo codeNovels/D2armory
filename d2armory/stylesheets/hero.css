@@ -79,9 +79,9 @@
 .profile-sheet .gear-bonuses { width: 225px; position: absolute; left: 30px; top: 360px; }
 .profile-sheet .gear-bonuses .tip { border:0; }
 .profile-sheet .gear-bonuses p { margin:0; padding-top:0px; line-height:15px;}
-.profile-sheet .gear-bonuses .help-icon {display:block; float:left; margin-right:3px; width: 25px; height: 25px; vertical-align: middle; background: url(../../images/profile/hero/help-icon.png) 0 0 no-repeat; font-size: 1px; position:relative; left:-2px;}
+.profile-sheet .gear-bonuses .help-icon {display:block; float:left; margin-right:3px; width: 25px; height: 25px; vertical-align: middle; background: url(http://us.battle.net/d3/static/images/profile/hero/help-icon.png) 0 0 no-repeat; font-size: 1px; position:relative; left:-2px;}
 .ie6 .profile-sheet .gear-bonuses .help-icon {background: url(../../images/profile/hero/help-icon.gif) 0 0 no-repeat;}
-.profile-sheet .gear-bonuses .header-3 { width:290px; color:#ffe8ce; background:url(../../images/profile/hero/gear-bonus-divider.png) 0 100% no-repeat; padding-bottom:5px }
+.profile-sheet .gear-bonuses .header-3 { width:290px; color:#ffe8ce; background:url(http://us.battle.net/d3/static/images/profile/hero/gear-bonus-divider.png) 0 100% no-repeat; padding-bottom:5px }
 .ie6 .profile-sheet .gear-bonuses .header-3 { background:none }
 .profile-sheet .gear-bonuses ul { margin: 5px 0; padding-left:8px }
 .profile-sheet .gear-bonuses li { padding:0; /*min-height:24px;*/ margin-top:11px; }
@@ -93,7 +93,7 @@
 .profile-sheet .gear-bonuses li:first-child p { padding-top:0; line-height:20px; }
 .profile-sheet .gear-bonuses .view-more { font-style: italic; color: #948474; padding-left:30px; }
 .profile-sheet .gear-bonuses .view-more:hover { color: #7B6D55; }
-.profile-sheet .gear-bonuses .bonus-radio { display:block; float:left; width:23px; height:23px; background:url(../../images/profile/hero/gear-bonus-radio.png) no-repeat -24px 0; margin-left:-29px; position:relative; top:-2px; }
+.profile-sheet .gear-bonuses .bonus-radio { display:block; float:left; width:23px; height:23px; background:url(http://us.battle.net/d3/static/images/profile/hero/gear-bonus-radio.png) no-repeat -24px 0; margin-left:-29px; position:relative; top:-2px; }
 .profile-sheet .gear-bonuses li:first-child .bonus-radio {top:1px;}
 .ie6 .profile-sheet .gear-bonuses .bonus-radio { background-image:url(../../images/profile/hero/gear-bonus-radio.gif); }
 .profile-sheet .gear-bonuses .bonus-radio.active { background-position: 0 0; }
@@ -113,18 +113,18 @@
 .paperdoll .weapon-flourish { width:128px; height:166px; background-repeat:no-repeat; position:absolute; }
 .paperdoll .weapon-flourish.main-hand-flourish { top:258px; left:200px; }
 .paperdoll .weapon-flourish.off-hand-flourish { top:258px; left:416px; }
-.paperdoll .weapon-flourish.elemental-arcane { background-image:url(../../images/profile/hero/weapon-elements/arcane.png); }
-.paperdoll .weapon-flourish.elemental-cold { background-image:url(../../images/profile/hero/weapon-elements/cold.png); }
-.paperdoll .weapon-flourish.elemental-lightning { background-image:url(../../images/profile/hero/weapon-elements/lightning.png); }
-.paperdoll .weapon-flourish.elemental-fire { background-image:url(../../images/profile/hero/weapon-elements/fire.png); }
-.paperdoll .weapon-flourish.elemental-poison { background-image:url(../../images/profile/hero/weapon-elements/poison.png); }
-.paperdoll .weapon-flourish.elemental-holy { background-image:url(../../images/profile/hero/weapon-elements/holy.png); }
+.paperdoll .weapon-flourish.elemental-arcane { background-image:url('http://us.battle.net/d3/static/images/profile/hero/weapon-elements/arcane.png'); }
+.paperdoll .weapon-flourish.elemental-cold { background-image:url('http://us.battle.net/d3/static/images/profile/hero/weapon-elements/cold.png'); }
+.paperdoll .weapon-flourish.elemental-lightning { background-image:url('http://us.battle.net/d3/static/images/profile/hero/weapon-elements/lightning.png'); }
+.paperdoll .weapon-flourish.elemental-fire { background-image:url('http://us.battle.net/d3/static/images/profile/hero/weapon-elements/fire.png'); }
+.paperdoll .weapon-flourish.elemental-poison { background-image:url('http://us.battle.net/d3/static/images/profile/hero/weapon-elements/poison.png'); }
+.paperdoll .weapon-flourish.elemental-holy { background-image:url('http://us.battle.net/d3/static/images/profile/hero/weapon-elements/holy.png'); }
 .ie6 .paperdoll .weapon-flourish { display:none; }
 
 .paperdoll .gear-slots { margin: 0 0 0 209px; position: relative; z-index: 3; }
 .paperdoll .gear-slots .d3-icon-item { box-shadow: 0 0 9px rgba(0,0,0,0.09), 0 2px 5px rgba(0,0,0,0.5); }
 .followers .d3-icon-item, .followers .icon-item-gradient, .followers .icon-item-inner { border-radius:3px; }
-.paperdoll .gear-slots .item-dye { display:block; position:absolute; left:-5px; bottom:-1px; width:21px; height:21px; background:url(../../images/profile/hero/bg-dye.png) 0 -1px no-repeat; }
+.paperdoll .gear-slots .item-dye { display:block; position:absolute; left:-5px; bottom:-1px; width:21px; height:21px; background:url(http://us.battle.net/d3/static/images/profile/hero/bg-dye.png) 0 -1px no-repeat; }
 .paperdoll .gear-slots .item-dye img { width:19px; height:19px; }
 .paperdoll .gear-slots .item-transmog { display:block; position:absolute; top:0; right:0; padding:4px; }
 .paperdoll .gear-slots .empty-icon { cursor:help; box-shadow:none; border:none; padding:1px; }
@@ -220,8 +220,8 @@
 .profile-overview .attributes .resources .resource-wrath .value,
 .profile-overview .attributes .resources .resource-spirit .value { color: #0C192F; text-shadow:1px 1px 2px #666; }
 .profile-overview .attributes .resources .resource-spirit .value { text-shadow:1px 1px 2px #444; text-shadow: 1px 1px 7px rgba(255,255,255,0.5), 1px 1px 1px rgba(0,0,0,0.6); }
-.profile-overview .attributes .resources .resource-icon { display:table-cell; width:50px; height:50px; vertical-align:middle; background:url(../../images/profile/hero/resources.png); }
-.ie6 .profile-overview .attributes .resources .resource-icon { background-image:url(../../images/profile/hero/resources.gif); }
+.profile-overview .attributes .resources .resource-icon { display:table-cell; width:50px; height:50px; vertical-align:middle; background:url(http://us.battle.net/d3/static/images/profile/hero/resources.png); }
+.ie6 .profile-overview .attributes .resources .resource-icon { background-image:url(http://us.battle.net/d3/static/images/profile/hero/resources.gif); }
 
 .profile-overview .attributes .resources .resource-icon.resource-fury { background-position: -50px 0; }
 .profile-overview .attributes .resources .resource-icon.resource-hatred-discipline { background-position: -100px 0px; }
@@ -257,7 +257,7 @@
 
 .profile-overview .skills .active-skills { height:163px; padding:16px 0 17px; border-bottom:1px solid #252018; margin-bottom:17px; }
 .profile-overview .skills .active-skills li { float: left; width:247px; padding:2px 0 0 12px; margin: 0 0 10px 0; position: relative; }
-.profile-overview .skills .active-skills .empty-skill { width:42px; height:42px; display:block; display:inline-block; background:url(../../images/profile/hero/skill-overlays.png) -47px 0; }
+.profile-overview .skills .active-skills .empty-skill { width:42px; height:42px; display:block; display:inline-block; background:url(http://us.battle.net/d3/static/images/profile/hero/skill-overlays.png) -47px 0; }
 .ie6 .profile-overview .skills .active-skills .empty-skill { background-image: url("../../images/profile/hero/skill-overlays.gif"); }
 .profile-overview .skills .active-skills .empty-skill.unlocked { background-position:-131px -42px; }
 .profile-overview .skills .active-skills .empty-skill.locked-2 { background-position:-47px 0; }
@@ -265,8 +265,8 @@
 .profile-overview .skills .active-skills .empty-skill.locked-9 { background-position:-131px 0; }
 .profile-overview .skills .active-skills .empty-skill.locked-14 { background-position:-47px -42px; }
 .profile-overview .skills .active-skills .empty-skill.locked-19 { background-position:-89px -42px; }
-.profile-overview .skills .active-skills .slot { display:block; width:22px; height:22px; background: url("../../images/profile/hero/skill-overlays.png") 0 0; position: absolute; top:-1px; left:-1px; }
-.ie6 .profile-overview .skills .active-skills .slot { background-image: url("../../images/profile/hero/skill-overlays.gif"); }
+.profile-overview .skills .active-skills .slot { display:block; width:22px; height:22px; background: url("http://us.battle.net/d3/static/images/profile/hero/skill-overlays.png") 0 0; position: absolute; top:-1px; left:-1px; }
+.ie6 .profile-overview .skills .active-skills .slot { background-image: url("http://us.battle.net/d3/static/images/profile/hero/skill-overlays.gif"); }
 .profile-overview .skills .active-skills .slot.slot-primary { background-position:0 -1px; }
 .profile-overview .skills .active-skills .slot.slot-secondary { background-position: -21px -1px; }
 .profile-overview .skills .active-skills .slot.slot-1 { background-position:0 -23px; }
@@ -291,13 +291,13 @@
 .profile-stats .stats-menu a.menu-active { background: #0c0b0a; border-color: #1d1916; border-bottom-color: #070706; }
 .profile-stats .stats-menu a.menu-active .name { color: #fff; font-weight: bold; }
 
-.stats-toggle { display: block; height: 50px; margin: 0 30px; line-height: 50px; text-align: center; outline: none; background: url("../../images/profile/hero/bg-stats-toggle.png") 50% 0 no-repeat; }
+.stats-toggle { display: block; height: 50px; margin: 0 30px; line-height: 50px; text-align: center; outline: none; background: url("http://us.battle.net/d3/static/images/profile/hero/bg-stats-toggle.png") 50% 0 no-repeat; }
 .stats-toggle.opened { background: url("../../images/profile/hero/bg-stats-toggle-on.png"); }
 
 /* followers */
 .profile-followers { margin: 30px; position: relative; overflow:hidden; }
 .ie6 .profile-followers .section-body { overflow:hidden; width:914px; }
-.profile-followers .follower-wrapper { display:block; float:left; width:250px; height:350px; padding:0 18px; background:#19160d url(../../images/profile/hero/followers.jpg) no-repeat; margin-right:26px; }
+.profile-followers .follower-wrapper { display:block; float:left; width:250px; height:350px; padding:0 18px; background:#19160d url(http://us.battle.net/d3/static/images/profile/hero/followers.jpg) no-repeat; margin-right:26px; }
 .ie6 .profile-followers .follower-wrapper { margin-right:16px; }
 .profile-followers .follower-wrapper.follower-templar { background-position:0 0; margin-right:0; }
 .profile-followers .follower-wrapper.follower-scoundrel { background-position:-286px 0; }
@@ -328,7 +328,7 @@
 .profile-followers .follower-wrapper .items .slot-neck .sockets-align { width:42px; height:42px; }
 
 .profile-followers .follower-wrapper .items .slot-special { left:34px; }
-.profile-followers .follower-wrapper .items .slot-special .slot-special-border {width:48px; height:48px; background:url("../../images/profile/hero/border-followerspecial.gif") 0 0 no-repeat; position:absolute; top:-3px; left:-3px;}
+.profile-followers .follower-wrapper .items .slot-special .slot-special-border {width:48px; height:48px; background:url("http://us.battle.net/d3/static/images/profile/hero/border-followerspecial.gif") 0 0 no-repeat; position:absolute; top:-3px; left:-3px;}
 .profile-followers .follower-wrapper .items .slot-neck { left:82px; }
 .profile-followers .follower-wrapper .items .slot-special .icon-item-inner,
 .profile-followers .follower-wrapper .items .slot-neck .icon-item-inner { width:38px; height:38px; }
@@ -356,7 +356,7 @@
 .profile-followers .follower-wrapper .items .sockets-wrapper { width:100%; height:100%; display:block; position:absolute; top:0; left:0; opacity:0.8; }
 .profile-followers .follower-wrapper .items a:hover .sockets-wrapper { opacity:1; }
 .profile-followers .follower-wrapper .items .sockets-align { height: 88px; width: 66px; display:table-cell; vertical-align:middle; }
-.profile-followers .follower-wrapper .items .socket { display:inline-block; vertical-align:middle; width:28px; height:28px; background:url(../../images/profile/hero/follower-socket.png) 0 0 no-repeat; text-align:center; position:relative; left:1px; }
+.profile-followers .follower-wrapper .items .socket { display:inline-block; vertical-align:middle; width:28px; height:28px; background:url(http://us.battle.net/d3/static/images/profile/hero/follower-socket.png) 0 0 no-repeat; text-align:center; position:relative; left:1px; }
 .ie6 .profile-followers .follower-wrapper .items .socket {  background:none; }
 .profile-followers .follower-wrapper .items .socket .gem { margin:4px auto 0;  width:20px; height:20px; }
 
@@ -369,7 +369,7 @@
 .profile-followers .follower-wrapper .skill:hover { cursor:pointer; }
 .profile-followers .follower-wrapper .skill.empty-skill { cursor:default; }
 .profile-followers .follower-wrapper .skill.empty-skill:hover .icon-cell { cursor:help; }
-.profile-followers .follower-wrapper .skill.empty-unlocked .icon-cell { background:url(../../images/profile/hero/follower-skill-unlocked.jpg) no-repeat 0 50% }
+.profile-followers .follower-wrapper .skill.empty-unlocked .icon-cell { background:url(http://us.battle.net/d3/static./images/profile/hero/follower-skill-unlocked.jpg) no-repeat 0 50% }
 .profile-followers .follower-wrapper .skill:hover .name { color:#FFF; }
 
 .profile-followers .follower-wrapper .adventure-stats { padding-top:37px; padding-left:6px; }
@@ -394,18 +394,18 @@
 .page-section.progression { margin-bottom:30px; }
 
 /* class specific */
-.barbarian-male .profile-sheet { background-image: url("../../images/profile/hero/paperdoll/barbarian-male.jpg"); }
-.barbarian-female .profile-sheet { background-image: url("../../images/profile/hero/paperdoll/barbarian-female.jpg"); }
-.crusader-male .profile-sheet { background-image: url("../../images/profile/hero/paperdoll/crusader-male.jpg"); }
-.crusader-female .profile-sheet { background-image: url("../../images/profile/hero/paperdoll/crusader-female.jpg"); }
-.demon-hunter-male .profile-sheet { background-image: url("../../images/profile/hero/paperdoll/demon-hunter-male.jpg"); }
-.demon-hunter-female .profile-sheet { background-image: url("../../images/profile/hero/paperdoll/demon-hunter-female.jpg"); }
-.monk-male .profile-sheet { background-image: url("../../images/profile/hero/paperdoll/monk-male.jpg"); }
-.monk-female .profile-sheet { background-image: url("../../images/profile/hero/paperdoll/monk-female.jpg"); }
-.witch-doctor-male .profile-sheet { background-image: url("../../images/profile/hero/paperdoll/witch-doctor-male.jpg"); }
-.witch-doctor-female .profile-sheet { background-image: url("../../images/profile/hero/paperdoll/witch-doctor-female.jpg"); }
-.wizard-male .profile-sheet { background-image: url("../../images/profile/hero/paperdoll/wizard-male.jpg"); }
-.wizard-female .profile-sheet { background-image: url("../../images/profile/hero/paperdoll/wizard-female.jpg"); }
+.barbarian-male .profile-sheet { background-image: url("http://us.battle.net/d3/static/images/profile/hero/paperdoll/barbarian-male.jpg"); }
+.barbarian-female .profile-sheet { background-image: url("http://us.battle.net/d3/static/images/profile/hero/paperdoll/barbarian-female.jpg"); }
+.crusader-male .profile-sheet { background-image: url("http://us.battle.net/d3/static/images/profile/hero/paperdoll/crusader-male.jpg"); }
+.crusader-female .profile-sheet { background-image: url("http://us.battle.net/d3/static/images/profile/hero/paperdoll/crusader-female.jpg"); }
+.demon-hunter-male .profile-sheet { background-image: url("http://us.battle.net/d3/static/images/profile/hero/paperdoll/demon-hunter-male.jpg"); }
+.demon-hunter-female .profile-sheet { background-image: url("http://us.battle.net/d3/static/images/profile/hero/paperdoll/demon-hunter-female.jpg"); }
+.monk-male .profile-sheet { background-image: url("http://us.battle.net/d3/static/images/profile/hero/paperdoll/monk-male.jpg"); }
+.monk-female .profile-sheet { background-image: url("http://us.battle.net/d3/static/images/profile/hero/paperdoll/monk-female.jpg"); }
+.witch-doctor-male .profile-sheet { background-image: url("http://us.battle.net/d3/static/images/profile/hero/paperdoll/witch-doctor-male.jpg"); }
+.witch-doctor-female .profile-sheet { background-image: url("http://us.battle.net/d3/static/images/profile/hero/paperdoll/witch-doctor-female.jpg"); }
+.wizard-male .profile-sheet { background-image: url("http://us.battle.net/d3/static/images/profile/hero/paperdoll/wizard-male.jpg"); }
+.wizard-female .profile-sheet { background-image: url("http://us.battle.net/d3/static/images/profile/hero/paperdoll/wizard-female.jpg"); }
 
 
 /* progress bar */

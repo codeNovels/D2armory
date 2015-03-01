@@ -66,7 +66,7 @@
 .d3-tooltip .tip { border-bottom: 0; }
 .d3-tooltip p { margin: 10px 0 0 0; }
 .d3-tooltip p:first-child { margin-top: 0; }
-.d3-tooltip .loading { display: block; width: 32px; height: 32px; background: url("../images/loaders/default.gif") no-repeat center center; }
+.d3-tooltip .loading { display: block; width: 32px; height: 32px; background: url("http://us.battle.net/d3/static/images/loaders/default.gif") no-repeat center center; }
 .d3-tooltip .wip { position: absolute; z-index: 2; left: 0; top: 33%; width: 350px; text-align: center; font-size: 28px; font-family: "Palatino Linotype", "Georgia", "Times", serif; text-transform: uppercase; color: #A99877; opacity: 0.25; filter: alpha(opacity=25); line-height: 100%; }
 
 	/* style reset */
@@ -76,7 +76,7 @@
 	.d3-tooltip .value { color: white; }
 
 	/* head */
-	.d3-tooltip .tooltip-head { height: 40px; width: 320px; padding: 0 15px; background: url("../images/ui/tooltip-title.jpg") no-repeat; }
+	.d3-tooltip .tooltip-head { height: 40px; width: 320px; padding: 0 15px; background: url("http://us.battle.net/d3/static/images/ui/tooltip-title.jpg") no-repeat; }
 	.d3-tooltip .tooltip-head h3 { color: #F3E6D0; font: 22px "Palatino Linotype", "Times", serif; height: 40px; line-height: 37px; text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 	.ko-kr .d3-tooltip .tooltip-head h3 { font-family: Kodia, Dotum; }
 
@@ -107,13 +107,13 @@
 	.d3-tooltip-item .item-itemset { font-size: 12px; }
 
 	.d3-tooltip-item .effect-bg { background-position: 10px 10px; background-repeat: no-repeat; }
-	.d3-tooltip-item .effect-bg-arcane { background-image: url("../images/item/effect-bgs/arcane.jpg"); }
-	.d3-tooltip-item .effect-bg-cold { background-image: url("../images/item/effect-bgs/cold.jpg"); }
-	.d3-tooltip-item .effect-bg-fire { background-image: url("../images/item/effect-bgs/fire.jpg"); }
-	.d3-tooltip-item .effect-bg-holy { background-image: url("../images/item/effect-bgs/holy.jpg"); }
-	.d3-tooltip-item .effect-bg-lightning { background-image: url("../images/item/effect-bgs/lightning.jpg"); }
-	.d3-tooltip-item .effect-bg-poison { background-image: url("../images/item/effect-bgs/poison.jpg"); }
-	.d3-tooltip-item .effect-bg-armor { background-image: url("../images/item/effect-bgs/armor.jpg"); background-position: 78px 20px; }
+	.d3-tooltip-item .effect-bg-arcane { background-image: url("http://us.battle.net/d3/static/images/item/effect-bgs/arcane.jpg"); }
+	.d3-tooltip-item .effect-bg-cold { background-image: url("http://us.battle.net/d3/static/images/item/effect-bgs/cold.jpg"); }
+	.d3-tooltip-item .effect-bg-fire { background-image: url("http://us.battle.net/d3/static/images/item/effect-bgs/fire.jpg"); }
+	.d3-tooltip-item .effect-bg-holy { background-image: url("http://us.battle.net/d3/static/images/item/effect-bgs/holy.jpg"); }
+	.d3-tooltip-item .effect-bg-lightning { background-image: url("http://us.battle.net/d3/static/images/item/effect-bgs/lightning.jpg"); }
+	.d3-tooltip-item .effect-bg-poison { background-image: url("http://us.battle.net/d3/static/images/item/effect-bgs/poison.jpg"); }
+	.d3-tooltip-item .effect-bg-armor { background-image: url("http://us.battle.net/d3/static/images/item/effect-bgs/armor.jpg"); background-position: 78px 20px; }
 	.d3-tooltip-item .effect-bg-armor-square { background-position: 78px 14px; }
 	.d3-tooltip-item .effect-bg-armor-big { background-position: 96px 20px; }
 	.d3-tooltip-item .effect-bg .item-type,
@@ -195,37 +195,37 @@
 	.d3-icon-item-64 .icon-item-big { width: 64px; height: 64px; }
 
 		/* gray */
-		.d3-icon-item-gray { border-color: #513f2e; background-image: url("../images/item/icon-bgs/brown.png"); background-color: #2a2017; }
+		.d3-icon-item-gray { border-color: #513f2e; background-image: url("http://us.battle.net/d3/static/images/item/icon-bgs/brown.png"); background-color: #2a2017; }
 		a:hover .d3-icon-item-gray,
 		.hover .d3-icon-item-gray,
 		.icon-active .d3-icon-item-gray { border-color: #7a5f45; }
 
 		/* white */
-		.d3-icon-item-white { border-color: #513f2e; background-image: url("../images/item/icon-bgs/brown.png"); background-color: #2a2017; }
+		.d3-icon-item-white { border-color: #513f2e; background-image: url("http://us.battle.net/d3/static/images/item/icon-bgs/brown.png"); background-color: #2a2017; }
 		a:hover .d3-icon-item-white,
 		.hover .d3-icon-item-white,
 		.icon-active .d3-icon-item-white { border-color: #7a5f45; }
 
 		/* blue */
-		.d3-icon-item-blue { border-color: #6091a6; background-image: url("../images/item/icon-bgs/blue.png"); background-color: #232227; }
+		.d3-icon-item-blue { border-color: #6091a6; background-image: url("http://us.battle.net/d3/static/images/item/icon-bgs/blue.png"); background-color: #232227; }
 		a:hover .d3-icon-item-blue,
 		.hover .d3-icon-item-blue,
 		.icon-active .d3-icon-item-blue { border-color: #90c8d3; }
 
 		/* yellow */
-		.d3-icon-item-yellow { border-color: #9b8e3c; background-image: url("../images/item/icon-bgs/yellow.png"); background-color: #322914; }
+		.d3-icon-item-yellow { border-color: #9b8e3c; background-image: url("http://us.battle.net/d3/static/images/item/icon-bgs/yellow.png"); background-color: #322914; }
 		a:hover .d3-icon-item-yellow,
 		.hover .d3-icon-item-yellow,
 		.icon-active .d3-icon-item-yellow { border-color: #cdc75a; }
 
 		/* orange */
-		.d3-icon-item-orange { border-color: #b07b38; background-image: url("../images/item/icon-bgs/orange.png"); background-color: #332314; }
+		.d3-icon-item-orange { border-color: #b07b38; background-image: url("http://us.battle.net/d3/static/images/item/icon-bgs/orange.png"); background-color: #332314; }
 		a:hover .d3-icon-item-orange,
 		.hover .d3-icon-item-orange,
 		.icon-active .d3-icon-item-orange { border-color: #d8b954; }
 
 		/* green */
-		.d3-icon-item-green { border-color: #748e3d; background-image: url("../images/item/icon-bgs/green.png"); background-color: #262f14; }
+		.d3-icon-item-green { border-color: #748e3d; background-image: url("http://us.battle.net/d3/static/images/item/icon-bgs/green.png"); background-color: #262f14; }
 		a:hover .d3-icon-item-green,
 		.hover .d3-icon-item-green,
 		.icon-active .d3-icon-item-green { border-color: #aec75c; }
@@ -240,9 +240,9 @@
 	.d3-icon-skill-42 .frame { width: 42px; height: 42px; }
 	.d3-icon-skill-64,
 	.d3-icon-skill-64 .frame { width: 64px; height: 64px; }
-	.d3-icon-skill-21 .frame { background-image: url("../images/icons/frames/skill-21.png"); }
-	.d3-icon-skill-42 .frame { background-image: url("../images/icons/frames/skill-42.png"); }
-	.d3-icon-skill-64 .frame { background-image: url("../images/icons/frames/skill-64.png"); }
+	.d3-icon-skill-21 .frame { background-image: url("http://us.battle.net/d3/static/images/icons/frames/skill-21.png"); }
+	.d3-icon-skill-42 .frame { background-image: url("http://us.battle.net/d3/static/images/icons/frames/skill-42.png"); }
+	.d3-icon-skill-64 .frame { background-image: url("http://us.battle.net/d3/static/images/icons/frames/skill-64.png"); }
 	.d3-icon-skill.selected .frame { background-position: top right; }
 
 	a:hover .d3-icon-skill .frame,
@@ -264,9 +264,9 @@
 	.d3-icon-trait-42 .frame { width: 51px !important; height: 51px !important; }
 	.d3-icon-trait-64,
 	.d3-icon-trait-64 .frame { width: 81px !important; height: 81px !important; }
-	.d3-icon-trait-21 .frame { background-image: url("../images/icons/frames/trait-21.png"); }
-	.d3-icon-trait-42 .frame { background-image: url("../images/icons/frames/trait-42.png"); }
-	.d3-icon-trait-64 .frame { background-image: url("../images/icons/frames/trait-64.png"); }
+	.d3-icon-trait-21 .frame { background-image: url("http://us.battle.net/d3/static/images/icons/frames/trait-21.png"); }
+	.d3-icon-trait-42 .frame { background-image: url("http://us.battle.net/d3/static/images/icons/frames/trait-42.png"); }
+	.d3-icon-trait-64 .frame { background-image: url("http://us.battle.net/d3/static/images/icons/frames/trait-64.png"); }
 	.d3-icon-trait.selected .frame { background-position: top right; }
 
 	a:hover .d3-icon-trait .frame,
@@ -287,7 +287,7 @@
 	.d3-icon-rune { vertical-align: middle; }
 	.d3-icon-rune span { display: block; vertical-align: top; background: no-repeat; }
 
-	.d3-icon-rune-large span { width: 50px; height: 50px; background-image: url("../images/icons/runes/large.png"); }
+	.d3-icon-rune-large span { width: 50px; height: 50px; background-image: url("http://us.battle.net/d3/static/images/icons/runes/large.png"); }
 	.d3-icon-rune-large .rune-a { background-position: 0 0; }
 	.d3-icon-rune-large .rune-b { background-position: -50px 0; }
 	.d3-icon-rune-large .rune-c { background-position: -100px 0; }
@@ -295,7 +295,7 @@
 	.d3-icon-rune-large .rune-e { background-position: -200px 0; }
 	.d3-icon-rune-large .rune-none { background-position: -250px 0; }
 
-	.d3-icon-rune-medium span { width: 42px; height: 42px; background-image: url("../images/icons/runes/medium.png"); }
+	.d3-icon-rune-medium span { width: 42px; height: 42px; background-image: url("http://us.battle.net/d3/static/images/icons/runes/medium.png"); }
 	.d3-icon-rune-medium .rune-a { background-position: 0 0; }
 	.d3-icon-rune-medium .rune-b { background-position: -42px 0; }
 	.d3-icon-rune-medium .rune-c { background-position: -84px 0; }
@@ -303,7 +303,7 @@
 	.d3-icon-rune-medium .rune-e { background-position: -168px 0; }
 	.d3-icon-rune-medium .rune-none { background-position: -210px 0; }
 
-	.d3-icon-rune-small span { width: 16px; height: 16px; background-image: url("../images/icons/runes/small.png"); }
+	.d3-icon-rune-small span { width: 16px; height: 16px; background-image: url("http://us.battle.net/d3/static/images/icons/runes/small.png"); }
 	.d3-icon-rune-small .rune-a { background-position: 0 0; }
 	.d3-icon-rune-small .rune-b { background-position: -16px 0; }
 	.d3-icon-rune-small .rune-c { background-position: -32px 0; }
@@ -344,4 +344,4 @@
 	.d3-color-rune-e { color: #f7e9b7 !important; }
 
 .d3-debug { display: none; }
-.tooltip-icon-bullet { display: inline-block; width: 8px; height: 8px; margin-right: 2px; vertical-align: middle; background: url("../images/icons/bullet.gif") no-repeat; }
+.tooltip-icon-bullet { display: inline-block; width: 8px; height: 8px; margin-right: 2px; vertical-align: middle; background: url("http://us.battle.net/d3/static/images/icons/bullet.gif") no-repeat; }
