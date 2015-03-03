@@ -81,6 +81,7 @@
     <Content Include="filters\genderConverter.js" />
     <Content Include="filters\splitFilter.js" />
     <Content Include="images\bg_background.jpg" />
+    <Content Include="images\Diablo3.PNG" />
     <Content Include="images\inventory-lines.png" />
     <Content Include="images\skill-overlays.png" />
     <Content Include="Index.html" />
