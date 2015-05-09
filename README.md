@@ -3,8 +3,7 @@
 <br/>
 <br/><b>App</b> - Uses the blizzard API to look up your account and display all characters/items
 <br/>
-<br/><b>JS</b>   - I wrote the angularjs from scratch to practice learning angular
-<br/>This included controllers | filters | $http | DirectInjection |
+<br/><b>JS</b> - I wrote the angularjs from scratch to practice learning angular controllers | filters | $http | DirectInjection
 
 <br/><b>HTML</b> - Using Angulars NG-Repeat I was able to delete 90% of the existing HTML with a few ternary operators
 
