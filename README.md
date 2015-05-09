@@ -1,7 +1,7 @@
 # d2armory
 <br/><b>HTML and CSS belong to Blizzard</b>
 <br/>
-<br/><b>App</b>  - Uses the blizzard API to look up your account and display all characters/items
+<br/><b>App</b><h6>  - Uses the blizzard API to look up your account and display all characters/items<h6>
 <br/>
 <br/><b>JS</b>   - I wrote the angularjs from scratch to practice learning angular
 
