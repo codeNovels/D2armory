@@ -1,5 +1,5 @@
 # d2armory
-<br/>HTML and CSS belong to Blizzard
+<br/><b>HTML and CSS belong to Blizzard</b>
 <br/>
 <br/><b>App</b>  - uses the blizzard API to look up your account and display all characters/items
 <br/>
