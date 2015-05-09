@@ -1,5 +1,5 @@
 # d2armory
-<br/><b>HTML and CSS belong to Blizzard</b>
+<br/><b>Original HTML and CSS belong to Blizzard and were modified to make this application work</b>
 <br/>
 <br/><b>App</b> - Uses the blizzard API to look up your account and display all characters/items
 <br/><b>JS</b> - I wrote the angularjs from scratch to practice learning angular controllers | filters | $http | DirectInjection
