@@ -1,7 +1,7 @@
 # d2armory
 <br/><b>HTML and CSS belong to Blizzard</b>
 <br/>
-<br/><b>App</b>  - uses the blizzard API to look up your account and display all characters/items
+<br/><b>App</b>  - Uses the blizzard API to look up your account and display all characters/items
 <br/>
 <br/><b>JS</b>   - I wrote the angularjs from scratch to practice learning angular
 <br/><b>HTML</b> - Using Angulars NG-Repeat I was able to delete 90% of the existing HTML
